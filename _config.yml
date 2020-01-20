@@ -1,4 +1,4 @@
-title: CSCI-UA.0480 Fall 2019, Section 003
+title: CSCI-UA.0479 Spring 2020, Section 001
 
 baseurl: ""
 resource_prefix: "resources/"
@@ -18,18 +18,18 @@ vars:
   slides_img_prefix: "../../resources/img"
   
   # course
-  course_number: "CSCI-UA.0480"
-  course_section: "003"
+  course_number: "CSCI-UA.0479"
+  course_section: "001"
   course_name: "Data Management and Analysis"
-  course_semester: "Fall 2019"
-  course_time: "T and TH, 11:00-12:15PM"
-  course_room: "60 5th Ave, Room 110"
+  course_semester: "Spring 2020"
+  course_time: "T and TH, 9:30AM-10:45AM"
+  course_room: "WWH 202"
   course_site: https://cs.nyu.edu/courses/fall19/CSCI-UA.0480-003/ 
   course_site_alt: http://cs.nyu.edu/~jversoza
   
   # office hours
-  office_hours: "<br>Mon/Wed 11:25am - 12:25pm at WWH 422<br>Thurs 12:15pm - 1:15pm at 60 5th Ave lobby"
-  office_hours_room: WWH 422 on Mon/Wed... Lobby, 60 5th Ave on Thurs
+  office_hours: "<br>Mon 8:40am - 10:40am and Tue 1:30pm - 2:30pm, WWH 422"
+  office_hours_room: WWH 422
   
   # midterm
   midterm1_date: "N/A"
