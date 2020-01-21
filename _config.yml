@@ -24,7 +24,7 @@ vars:
   course_semester: "Spring 2020"
   course_time: "T and TH, 9:30AM-10:45AM"
   course_room: "WWH 202"
-  course_site: https://cs.nyu.edu/courses/fall19/CSCI-UA.0480-003/ 
+  course_site: https://cs.nyu.edu/courses/spring20/CSCI-UA.0479-001/ 
   course_site_alt: http://cs.nyu.edu/~jversoza
   
   # office hours
