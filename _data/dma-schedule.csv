@@ -49,7 +49,7 @@ Unicode and Strings
 
 __Homework #00__ – due Thur, 1/30, at 11am (before class)
 
-0. [Fill out this survey!](https://docs.google.com/forms/d/e/1FAIpQLSf1jh4xLGK_16d_Z7uJlVU9fYIOjnRpkqZSt_APaQTJNqPMgA/viewform)
+0. [Fill out this survey!]({site.survey_github})
 1. Install a Python 3 Environment
   * use [Anaconda](https://conda.io/docs/user-guide/install/index.html)
   * if you’re already familiar with Python, you can manually install:
