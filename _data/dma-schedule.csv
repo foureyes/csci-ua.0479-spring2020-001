@@ -2,7 +2,7 @@ draft,type,num,date,day,slides,readings,assignments,,old schedule,
 ,,1,28-Jan ,Tue,"Introductions
 
 * [Course Overview](slides/intro/overview.html) 
-* [Github Usage Form]({site.survey_github}) (survey)
+* [Github Usage Form]({{site.survey_github}}) (survey)
 * Discuss Quizzes/Readings (one class ahead)
 
 Python 3 Ecosystem and Installation
@@ -49,7 +49,7 @@ Unicode and Strings
 
 __Homework #00__ – due Thur, 1/30, at 11am (before class)
 
-0. [Fill out this survey!]({site.survey_github})
+0. [Fill out this survey!]({{site.survey_github}})
 1. Install a Python 3 Environment
   * use [Anaconda](https://conda.io/docs/user-guide/install/index.html)
   * if you’re already familiar with Python, you can manually install:
