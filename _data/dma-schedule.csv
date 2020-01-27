@@ -42,12 +42,12 @@ Unicode and Strings
  
  * [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
  * [What Every Programmer Absolutely, Positively Needs To Know About Encodings And Character Sets To Work With Text](http://kunststube.net/encoding/)
- * [Unicode HOWTO](https://docs.python.org/3/howto/unicode.html)","__Quiz #01__ – due Thur, 1/30, at 11am (before class)
+ * [Unicode HOWTO](https://docs.python.org/3/howto/unicode.html)","__Quiz #01__ – due Thur, 1/30, at 9:30am (before class)
 
 * find it on NYU Classes
 * check the Tests and Quizzes section 
 
-__Homework #00__ – due Thur, 1/30, at 11am (before class)
+__Homework #00__ – due Thur, 1/30, at 9:30am (before class)
 
 0. [Fill out this survey!]({{ site.survey_github }})
 1. Install a Python 3 Environment
@@ -110,7 +110,7 @@ Type Annotations (optional)
  Online Resources
  
  * [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)","
-__Quiz #02__ – due Tue __morning__, 2/4, at 11am (just before class)
+__Quiz #02__ – due Tue __morning__, 2/4, at 9:30am (just before class)
 
 * find it on NYU Classes
 * check the Tests and Quizzes section
