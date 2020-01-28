@@ -77,9 +77,6 @@ Sequence Types, Mapping Types, Sets
   * [Slides from Prof. Bloomberg](https://nyu-computer-science.github.io/data-management-and-analysis/useful-types/)
   * [Addendum to Sequences from Prof. Bloomberg](https://raw.githubusercontent.com/nyu-computer-science/data-management-and-analysis/master/notebooks/sequences.ipynb) (notebook)
 
-
--->
-
 Functions and Functions as Objects
 
 * [\* and \*\*, Keyword Arguments](notebooks/py/functions.ipynb) (notebook)
