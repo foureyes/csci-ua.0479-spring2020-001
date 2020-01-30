@@ -74,11 +74,10 @@ Sequence Types, Mapping Types, Sets
 * [Sets](slides/python/sets.html)
 -->
 
-* Notebooks
-  * [Sequences, Dictionaries and Sets](notebooks/py/sequences.ipynb) (notebook)
-* Additional Resources
-  * [Slides from Prof. Bloomberg](https://nyu-computer-science.github.io/data-management-and-analysis/useful-types/)
-  * [Addendum to Sequences from Prof. Bloomberg](https://raw.githubusercontent.com/nyu-computer-science/data-management-and-analysis/master/notebooks/sequences.ipynb) (notebook)
+* [Sequences, Dictionaries and Sets](notebooks/py/sequences.ipynb) (notebook)
+* Additional Resources from Prof. Bloomberg
+  * [Slides](https://nyu-computer-science.github.io/data-management-and-analysis/useful-types/)
+  * Notebook[](https://raw.githubusercontent.com/nyu-computer-science/data-management-and-analysis/master/notebooks/sequences.ipynb) (notebook)
 
 Functions and Functions as Objects
 
@@ -217,7 +216,7 @@ Vectors and Matrices (numpy)
  MATERIAL
  * TODO - add linear algebra
  * motivation for linear algebra… some example? Maybe https://www.youtube.com/watch?v=Qz58vTa8-SY",,
-y,,5,11-Feb ,Tue,"Vectors and Matrices (numpy) continued
+ ,,5,11-Feb ,Tue,"Vectors and Matrices (numpy) continued
 
 * See slides from previous class
 
