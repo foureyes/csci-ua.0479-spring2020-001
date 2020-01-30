@@ -117,9 +117,10 @@ __Quiz #02__ – due Tue __morning__, 2/4, at 9:30am (just before class)
 
 __Homework #01__ – due Thursday 2/6 at 11pm
 
-* Homework #01 to be posted
+* [Homework #01 Instructions](assignments/01.html)
+
 ",,,
-y,,3,04-Feb ,Tue,"Classes Continued (protocols / double underscore)
+,,3,04-Feb ,Tue,"Classes Continued (protocols / double underscore)
 
 * [Double Underscore Methods](notebooks/py/classes.ipynb) (notebook)
 * [Another Look at iter and getitem](notebooks/py/iter_getitem.ipynb)  (notebook)
@@ -149,10 +150,7 @@ Data Science from Scratch
  Think Stats
  
  * Ch 1: Exploratory Data Analysis
- * Ch 2: Distributions","__Homework #01__ – due Tue 9/17 at 11pm
-
-1. [Homework #01 Instructions](assignments/01.html)
-
+ * Ch 2: Distributions","
 <!--
   * vector class
   * simple data load, transform and 
@@ -188,7 +186,7 @@ __Quiz #03__ – due Wed, 9/26, at 11pm
  * create csv class, allow delimiter change, watch out for commas in data
  * write tests?
  * text analysis",,
-y,,4,06-Feb ,Thu,"Iterators and Generators
+,,4,06-Feb ,Thu,"Iterators and Generators
 
 * [Iterators, Generators](notebooks/py/generators.ipynb) (notebook)
 
