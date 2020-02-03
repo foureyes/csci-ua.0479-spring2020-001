@@ -119,7 +119,7 @@ __Homework #01__ – due Thursday 2/6 at 11pm
 
 * Homework #01 to be posted
 ",,,
-y,,3,04-Feb ,Tue,"Classes Continued (protocols / double underscore)
+,,3,04-Feb ,Tue,"Classes Continued (protocols / double underscore)
 
 * [Double Underscore Methods](notebooks/py/classes.ipynb) (notebook)
 * [Another Look at iter and getitem](notebooks/py/iter_getitem.ipynb)  (notebook)
@@ -149,27 +149,10 @@ Data Science from Scratch
  Think Stats
  
  * Ch 1: Exploratory Data Analysis
- * Ch 2: Distributions","__Homework #01__ – due Tue 9/17 at 11pm
+ * Ch 2: Distributions","
+__Quiz #03-A and #03-B __ – due Tue, 2/11, at 9:30am
 
-1. [Homework #01 Instructions](assignments/01.html)
-
-<!--
-  * vector class
-  * simple data load, transform and 
-  * analysis  with file data: requires lists, 
-  * requires dictionaries
-  * create csv class, allow delimiter change, watch out for commas in data
-  * write tests?
-  * text analysis 
-* histogram
-* birthday paradox
-* syllabic poetry
-* mean, median, mode, etc.
-
-__Quiz #03__ – due Wed, 9/26, at 11pm
-
-* (see NYU Classes)
--->","LECTURE:
+* (see NYU Classes)","LECTURE:
  * central tendency (mean, average)
  * dispersion (spread, min, max, standard * deviation std dev pop)
  * other (mode, frequency, skewedness)
@@ -188,7 +171,7 @@ __Quiz #03__ – due Wed, 9/26, at 11pm
  * create csv class, allow delimiter change, watch out for commas in data
  * write tests?
  * text analysis",,
-y,,4,06-Feb ,Thu,"Iterators and Generators
+,,4,06-Feb ,Thu,"Iterators and Generators
 
 * [Iterators, Generators](notebooks/py/generators.ipynb) (notebook)
 
@@ -211,7 +194,28 @@ Vectors and Matrices (numpy)
  Python for Data Analysis
  
  * Ch 4: Numpy Basics: Arrays and Vectors
- * Ch 6. Data Loading, Storage, and File Formats (Skip Web Requests and Database)",,"DEMO:
+ * Ch 6. Data Loading, Storage, and File Formats (Skip Web Requests and Database)","__Homework #02__ – due Thu 2/13 at 11pm
+
+* Homework 02 to be posted
+
+<!-- 
+1. [Homework #02 Instructions](assignments/02.html)
+-->
+
+<!--
+  * vector class
+  * simple data load, transform and 
+  * analysis  with file data: requires lists, 
+  * requires dictionaries
+  * create csv class, allow delimiter change, watch out for commas in data
+  * write tests?
+  * text analysis 
+* histogram
+* birthday paradox
+* syllabic poetry
+* mean, median, mode, etc.
+-->
+","DEMO:
  * load file with numeric data
  * use loops or comprehensions to calculate
  * vectorized operation
