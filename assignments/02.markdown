@@ -657,10 +657,10 @@ To test your code, you can try to open a csv from your `tabletools.py` module. O
 * display the last 4 rows of the data set
 * show the candy name, if it's chocolate, if it's peanuty/almondy, and its win percentage for all candy that is chocolate
 * using the results above, add another criteria: only candies that are peanuty/almondy (that is... at the end, you'll only have a listing of chocolate and peanut candies!)
-* using the previous results, in the next 3 cells, apply one of following filters on chocolate and almond / peanut in each cell
-	1. chocolate and almond / peanut that have win percentage is < than 50
-	2. chocolate and almond / peanut candies whose name starts with "Reese" __YOU MUST USE A LAMBDA FOR THIS__
-	3. chocolate and almond / peanut  candies whose name is less than 10 characters long __YOU MUST USE A LAMBDA FOR THIS__
+* using the previous results, apply each of the following filters on chocolate and almond-peanut candies, with one "filter" per cell 
+	1. chocolate and almond-peanut candies that have win percentage  < than 50
+	2. chocolate and almond-peanut candies with a name that starts with "Reese", __YOU MUST USE A LAMBDA FOR THIS__
+	3. chocolate and almond-peanut candies with a name less than 10 characters long. __YOU MUST USE A LAMBDA FOR THIS__
 	
 
 ## Annotations
