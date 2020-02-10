@@ -261,7 +261,7 @@ Plotting and Visualization
  
  Python for Data Analysis
  
- * Ch 9: Plotting and Visualization","__Quiz #04 and #05__ – due Tue morning, 9/24, at 11am","
+ * Ch 9: Plotting and Visualization","__Quiz #04__ – due Tue morning, 2/18, at 9:30am","
 * Use data from previous homework, and focus on a column
 * Get some descriptive statistics
   * Implement stddev
@@ -269,7 +269,7 @@ Plotting and Visualization
  * Create data frame like library - no loops, only generator expressions 
  * Manual Cleaning
  * music generator (numpy) no loops only vector operations",,
-y,,6,13-Feb ,Thu,"See Previous Slides on Matplotlib
+,,6,13-Feb ,Thu,"See Previous Slides on Matplotlib
 
 * [matplotlib – charts and graphs](notebooks/viz/charts-graphs-decode.ipynb) (notebook)
 * [What is this .txt file?](notebooks/viz/files/enc.txt)
@@ -298,10 +298,14 @@ Correlation and Covariance
  
  Python for Data Analysis
  
- * Ch 5. Getting Started with pandas","__Homework #02__ – due Fri 9/27 at 11pm
+ * Ch 5. Getting Started with pandas","__Homework #03__ – due Thu 2/20 at 11pm
 
-1. [Homework #02 Instructions](assignments/02.html)
 
+* Homework #03 to be posted
+
+<!--
+1. [Homework #03 Instructions](assignments/03.html)
+-->
 ","<!-- 
 HW 02:
  * Choose data set and visualize… motivate usage of numpy maybe?
@@ -344,7 +348,15 @@ Using APIs
  * Ch 6: Data Loading, Storage, and File Formats
  * Focus on Scraping
  * Focus on APIs
- * Ch 7: Data Cleaning and Preparation",,"HW 03 
+ * Ch 7: Data Cleaning and Preparation","__Homework #04__ – due Thu 2/27 at 11pm
+
+
+* Homework #04 to be posted
+
+
+<!--
+* [Homework #04 Instructions](assignments/04.html)
+-->","HW 03 
 * use an API
 * clean data
 * standalone analysis
@@ -421,10 +433,7 @@ Join Combine and Reshape
  
  Python for Data Analysis
  
- * Ch 8: Data Wrangling: Join, Combine and Reshape","__Homework #03__ – due Tue 10/8 at 11pm
-
-1. [Homework #03 Instructions](assignments/03.html)
-","MATERIAL:
+ * Ch 8: Data Wrangling: Join, Combine and Reshape",,"MATERIAL:
  TODO - slides for join, combine
  TODO - slides for regular expressions
  TODO - data set for joins?","Regular Expressions
