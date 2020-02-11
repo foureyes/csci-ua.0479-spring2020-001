@@ -665,21 +665,39 @@ To test your code, you can try to open a csv from your `tabletools.py` module. O
 
 ## Annotations
 
+⚠️  __This was edited to handle internal links within a notebook__
+
+
 Add a `README.md` that [links to the lines of code (see this link for instructions how)](https://help.github.com/articles/creating-a-permanent-link-to-a-code-snippet/) where you have:
 
-* 4 list comprehensions
-* 2 lambdas
 
 Use this exact markdown format in your `README.md` to add links (including []'s and ()'s):
 
 ```
-* List Comprehensions
-	1. [short description 1](https://path.copied/for/permalink/to/code)
-	2. [short description 2](https://path.copied/for/permalink/to/code)
-	3. [short description 3](https://path.copied/for/permalink/to/code)
-	4. [short description 4](https://path.copied/for/permalink/to/code)
-* Lambdas
-	1. [short description 1](https://path.copied/for/permalink/to/code)
-	2. [short description 2](https://path.copied/for/permalink/to/code)
+## 4 List Comprehensions
+
+1. [short description 1](https://path.copied/for/permalink/to/code)
+2. [short description 2](https://path.copied/for/permalink/to/code)
+3. [short description 3](https://path.copied/for/permalink/to/code)
+4. [short description 4](https://path.copied/for/permalink/to/code)
 ```
+
+Additionally, to annotate the use of lambdas in your notebook, add a table of contents at the top of your notebook as a markdown cell that contains links to other parts of your notebook: 
+
+```
+# Table of Contents
+
+* [first lambda](#first-lambda)
+* [second lambda](#second-lambda)
+```
+
+And then, before each cell that contains a require lambda, add a header. For example:
+
+```
+## first lambda
+```
+
+Note that the link to the cell above is the lowercase, "dashed", version... prefixed with a hash.
+
+Download [this notebook](../notebooks/internal-links.ipynb) for an example
 
