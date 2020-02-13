@@ -120,7 +120,7 @@ Find a data set that you're interested in... that's publicly available online as
 ```
 
 
-#### Show some data and document its format
+#### Show Some Data and Document its Format
 
 1. with code, display the first few lines of the file (simply use `open` to do this)
 2. describe the format of the data in a markdown cell
@@ -137,7 +137,7 @@ Write some questions about your data. Focus on the following:
 * questions that _may_ be answered by using summary statistics on numeric columns in your data set
 * questions that _may_ be answered by viewing basic data visualizations, such as bar charts and scatter plots
 
-## Part 3 - Stats and Answers
+## Part 3 - Descriptive Statistics
 
 1. read the data from at least two columns of your file; try to read the numeric data into a numpy array 
 	* you can read the individual columns into separate arrays
