@@ -70,7 +70,7 @@ Clone the homework #3 repository when it is created for you.
 
 ## Overview
 
-In this assignment, you'll create a single notebook, (`ipynb`) that contains documentation and code. The following is an overview of the 6 parts to this assignment:
+In this assignment, you'll create a single notebook, (`ipynb`) that contains documentation and code. There are 6 parts to this assignment:
 
 1. select and document a data set
 	* ⚠️ the data should be comma / pipe / tab delimited... or fixed width
