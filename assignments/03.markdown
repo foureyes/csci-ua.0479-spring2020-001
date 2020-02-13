@@ -70,7 +70,7 @@ Clone the homework #3 repository when it is created for you.
 
 ## Overview
 
-In this assignment, you'll create a single notebook, (`ipynb`) that contains documentation and code. 
+In this assignment, you'll create a single notebook, (`ipynb`) that contains documentation and code. The following is an overview of the 6 parts to this assignment:
 
 1. select and document a data set
 	* ⚠️ the data should be comma / pipe / tab delimited... or fixed width
@@ -79,11 +79,7 @@ In this assignment, you'll create a single notebook, (`ipynb`) that contains doc
 	* include the data set in your repository so that your notebooks can be run by the graders without having to perform any setup (if data set is &gt; 100MB, link to file instead)
 2. write some questions that _may_ be answered by using summary statistics on numeric columns in your data set, or by viewing visualizations
 3. calculate summary statistics on both columns using numpy
-4. validate calculations
-	* export a csv
-	* ...then import the csv into a spreadsheet 
-	* confirm that your summary statistics match
-	* save or export the spreadsheet as an Open Office (`.ods`) or Excel File (`.xls`) and place in your repository
+4. validate calculations using a spreadsheet (such as LibreOffice, Google Sheets, Excel, etc.)
 5. create at least two visualizations with matplotlib
 6. write a conclusion answering your questions in part 2 based on the results in parts 3 and 4
 	* describe the results of your calculations and visualizations
@@ -161,15 +157,22 @@ Write some questions about your data. Focus on the following:
 		* median or percentile (quantile), 
 	3. measure dispersion with 
 		* variance
-		* standard deviation 
+		* standard deviation (likely of the sample rather than population)
 		* interquartile range
 
+## Part 4 - Confirm Calculations
 
-## Part 4 - Visualizations
+* try opening your original file with LibreOffice, Google Sheets, etc. 
+* using your spreadsheet's functions, confirm that your summary statistics match
+* in a markdown cell in your notebook:
+	* compare and contrast the results from you calculations with numpy... to the results from your spreadsheet
+	* investigate any discrepancies, and - if possible - describe (or hypothesize) why there are differences 
+
+## Part 5 - Visualizations
 
 Create at least two visualizations with matplotlib.
 
-## Part 5 - Conclusion
+## Part 6 - Conclusion
 
 Write a conclusion answering your questions in part 2 based on the results in parts 3 and 4.
 
