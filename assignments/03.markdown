@@ -116,7 +116,6 @@ Find a data set that you're interested in... that's publicly available online as
 2. Link to Data: (TODO: link to any documentation about the data that you've found )
 3. Source / Origin: (TODO:  discuss the origin of the data (what is it, who collected / generated it, how did they do it, etc.)
 4. Motivation: (TODO: describe why you are interested in it) 
-5. Questions (TODO: list a few (2 ~ 3)  questions that you think this data set may eventually answer)
 
 ```
 
