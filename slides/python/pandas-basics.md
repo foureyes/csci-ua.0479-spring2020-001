@@ -1413,7 +1413,7 @@ __The index of a `DataFrame` is actually an object itself (not just a simple `ar
 * {:.fragment} immutable
 * {:.fragment} can be shared among objects
 * {:.fragment} _like_ a fixed size set
-	* {:.fragment} (shares some operations
+	* {:.fragment} (shares some operations)
 	* {:.fragment} (but can contain duplicates)
 
 </section>

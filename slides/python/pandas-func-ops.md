@@ -40,6 +40,7 @@ __To go over `apply` and `applymap`, we'll use two very small sample data sets__
 __Copy and paste the following into your notebook / interactive shell.__ &rarr;
 
 <pre><code data-trim contenteditable>
+import pandas as pd
 rain = pd.DataFrame([[3.50, 4.53, 4.13, 3.98],
                      [7.91, 5.98, 6.10, 5.12],
                      [3.94, 5.28, 3.90, 4.49],
@@ -55,6 +56,7 @@ rain = pd.DataFrame([[3.50, 4.53, 4.13, 3.98],
 __Copy and paste the following into your notebook / interactive shell.__ &rarr;
 
 <pre><code data-trim contenteditable>
+import pandas as pd
 d = [["$229.2", 2017, 123000, "$1100", "Cupertino, US"],
      ["$211.9", 2017, 320671, "$284", "Suwon, South Korea"],
      ["$177.8", 2017, 566000, "$985",  "Seattle, US"],
@@ -200,7 +202,7 @@ nums.applymap(factorial)
 
 
 <section markdown="block">
-## `apply` and `applymap` Practice
+## `map` and `applymap` Practice
 
 * {:.fragment} using our rainfall data, convert every number from inches to centimeters (1 inch is about 2.5 cm) and add cm as a label (it's ok if all values are converted to strings)
 	<pre class="fragment"><code data-trim contenteditable>

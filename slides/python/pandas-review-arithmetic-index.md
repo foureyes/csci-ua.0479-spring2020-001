@@ -38,6 +38,7 @@ __Copy and paste the following into your notebook / interactive shell.__ &rarr;
 * ...containing some slightly modified (to compact) data from the Wikipedia article mentioned previously
 
 <pre><code data-trim contenteditable>
+import pandas as pd
 d = [["$229.2", 2017, 123000, "$1100", "Cupertino, US"],
      ["$211.9", 2017, 320671, "$284", "Suwon, South Korea"],
      ["$177.8", 2017, 566000, "$985",  "Seattle, US"],
