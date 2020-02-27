@@ -65,155 +65,235 @@ In this homework, you'll:
 	4. Import and clean the data using SQL
 	5. Write queries against the imported data
 
-## Part 1: Use "business" requirements to build a database
-
-To save some money 💰, instead of taking an Uber/Lyft/Taxi all over the city, you and a bunch of friends decide to buy a pool of electric scooters to share!
-
-Other students find out about your scooter scheme, and want to join in 🙌! You rent out a small store front to be the base of your _Scoot Share_ ... where people can go to to borrow or return a scooter (for a small hourly fee), 24 hours / day 🌞🌔! Now you have to keep track of an ever-growing fleet of electric scooters __and__ who's borrowed them. 
-
-### Here's how your _Scoot Share_ works:
-
-1. A person comes into your store to borrow a scooter...
-2. You take down their name, contact information, and when they first entered your store
-	* for contact information, you simply need a way to get in touch with them in case you need to track down an unreturned scooter or a damaged scooter, so the following are required:
-		* email address
-		* cell phone 
-		* home address
-	* keep track of both date and time for when they first entered / gave you their information
-3. If they've borrowed a scooter before, you can just retrieve all of their previous information from the first time they borrowed a scooter
-4. If they already have a scooter borrowed, but that they haven't returned it, then they can't borrow anothers scooter
-5. If they've been referred by someone else that had previously borrowed a scooter, make sure to take note of that 
-	* it's adequate to simply know who referred who; no additional information has to be kept about a referral
-	* of course, someone can come it without having been referred
-6. Then... they choose a scooter to borrow from your inventory of available scooters
-	* the scooters vary, with differences in:
-		* manufacturer
-		* the manufacturer's country
-		* model number
-		* range (in kilometers)
-		* weight (in kilograms) 
-		* top speed (in kilometers/hour)
-		* condition (new, slightly used, used)
-	* you can have multiple scooters that have the same manufacturer and model number
-6. They can pre-pay to borrow a scooter for a set number of hours
-	* it's important to note when they actually borrow a scooter
-	* and, of course, when they need to return it
-	* ... and how much they paid
-7. They give you their payment information so that you can charge them for the hours they book and charge them additional fees if they return the scooter late or damaged (note that you don't keep track of this on your own - you use a 3rd party service so you don't have to deal with any credit card number storage regulations)
-8. When they return the scooter...
-	* keep track of when it was returned
-	* and determine if the return is late or not, and check for damages
-	* ... add any additional fees for damage / late return as separate line items associated with the borrow / return
-9. An arbitrary number of _freeform_ text notes can be added to when a person borrows a scooter
-	* these notes can be used to indicate issues that come up while the scooter is being used or when it's returned (for example, the scooter may not meet its stated max range while it's out... or the scooter may be returned with handle grips missing)
-	* in addition to the text, notes can be categorized as: return condition, malfunction, or other
-10. Lastly, you should be able to _flag_ a user as someone that has had issues in the past
-
-Because you're an SQL _expert_ 🤓, you decide to store all of this information in a database! 
-
-⚠️ See [the "Write Some SQL" below](#write-some-sql) to get an idea of what queries you'd be running against this database. ⚠️
-
-
-### Create an ER Diagram and write SQL to Make Tables
-
-1. ✏️ Based on the description above, create an ER Diagram (chen, crow's foot, or even uml) to model the data
-	* there are multiple ways to model the scenario described, and there are clearly __ambiguities__ in the description
-	* you can use any diagramming tool to create your diagram: 
-		* we used [pgmodeler](https://pgmodeler.io) in class, but you have to compile it if you want it for free (it's not the _easiest_ thing to do, but you can also get the paid version if you think you'll be using this software beyond this class)
-			* you have to write your own SQL for the creation scripts (but of course, you can check against this generated sql)
-		* although geared towards mysql, you can use [MySQL Workbench](https://www.mysql.com/products/workbench/)
-		* you can also use non-database specific tools like:
-			1. [draw.io](https://www.draw.io/) (you can start with "Software" --&rarr; "Entity Relationship", the last diagram type)
-			2. use google drawings and copy symbols from [this document](https://docs.google.com/drawings/d/1hcTNp5IlnJXxLWDx5f8mptMLYDKqnJLt5fKgP4aP8e8/edit) (which sourced its symbols from [ER Diagram Symbols](https://docs.google.com/drawings/d/1IIQ6ftgPqG082JRTW7-cBzXAi_BdxrBmEncQeQETzJk/edit))
-			3. Visio
-			4. [Dia](http://dia-installer.de/), or any other drawing application
-		* ⚠️⚠️⚠️ __see the next section, "Write Some SQL", as some of those queries may inform your design decisions__
-	* ⚠️ __regardless of what tool you use, you must export to an image or pdf__ 
-2. 🔑 __Use natural primary keys when possible__, but surrogate / artificial keys are ok too if the other natural keys may end up changing
-3. 👀 Avoid data redundancy and update / insert/ delete anomalies by making sure your data model is minimally in 3rd normal form
-4. 🤝 __maintain relational integrity and use constraints to enforce this__ 
-5. 🖼 Export this as an image (any format is ok) called `er-diagram.png` (change extension appropriately)
-6. Embed the image under a heading called `Scoot-Share` in your `README.md`
-7. __Below the image, describe:__ 
-	* your design decisions for the relationships between tables
-		* if there are tables that aren't in 3rd normal form, please point them out
-		* describe why you did not normalize further ...or if there are any issues that would come up due to that design decision
-	* any assumptions you had to make due to the ambiguities in the description above
-8. Create a a file called `part-1-scoot-share-create.sql` that contains SQL for creating all of the tables that you've modeled
-9. Add a link from your `README.md` to `part-1-scoot-share-create.sql`
-
-
-<a name="write-some-sql">
-
-### Write Some SQL!
-
-If it's relevant for your paricular data model, check out the documentation on:
-
-* [Date/Time Types](https://www.postgresql.org/docs/current/datatype-datetime.html)
-* [Date/Time Functions and Operators, such as NOW(), &gt;, etc.](https://www.postgresql.org/docs/current/functions-datetime.html)
-
-In a file called `part-1-scoot-share-queries.sql`:
-
-1. List all people (names are adequate) that have flags in any order
-2. List all available scooters in any order
-3. List all scooters (scooter model and manufacturer, along with person's name... and when they're due back) that are being borrowed in order of when they're due back ordered by when whey were due increasing (that is, earlier ones appear first, and more recent ones appear later)
-4. List all scooters (scooter model and manufacturer, along with person's name) that are being borrowed and that are late in any order
-5. List the top 5 people (names and number of referrals) that have the most referrals sorted by most referrals descending
-6. Given a unique identifier for a person, show all of the times that person has borrowed a scooter in chronological order (from the first time they borrowed a scooter to the most recent)
-7. Given a unique identifier for a particular instance of a person borrowing a scooter, show all of the damage / late related fees 
-8. List all of the manufacturers of scooters in your database, __even if you don't currently have any of their scooters in your inventory__
-
-Add a link to `part-1-scoot-share-queries.sql` in your `README.md`
-
-## Part 2: Normalize the data form previous assignments....
-
-1. Use the data that you've worked on in previous assignments or find a new data set:
-	* create at least two tables with a foreign key relationship based on this data
-	* make sure that the resulting tables are minimally in 3rd normal form
-	* create a file called `part-2-normalization-create.sql`
-2. Import the data into the two tables
-	* you can use any method to do this
-	* ...from using only SQL
-	* ...to using a combination of SQL and Python (with any libraries you'd like to use)
-	* save any sql or Python that you've written into a file called `part-2-normalization-import.sql` or `part-2-normalization-import.py` (or both!)
-	* save the original data source an any intermediary transformations
-3. Write the following queries and __describe what they do in a comment__... all within `part-2-normalization-queries.sql`:
-	1. a query that involves an inner join
-		* use a comment to describe the query
-	2. a query that involves an outer join (left, right or full)
-		* use a comment to describe the query
-	3. a query that involves an inner join and an aggregate function
-		* use a comment to describe the query
-
-Under a heading called `Normalization`, add links to your:
-
-* create statements sql
-* original data and transformed/cleaned data (if relevant)
-* import scripts (SQL and/or Python)
-* queries
-
-## Conclusion
-
-At the end of the homework, your `README.md` should look like the following (with parts marked `TODO` replaced with your own written content)
+## Part 1 - Combine Fa20 Course Info with Requirements
 
 ```
-# Homework 05
-
-## Scoot-Share
-
-![er diagram for scoot share](er-diagram.png)
-
-* TODO: a list of design decisions
-* TODO: a list of assumptions
-
-Scripts
-
-* [part-1-scoot-share-create.sql](part-1-scoot-share-create.sql)
-* [part-1-scoot-share-queries.sql](part-1-scoot-share-queries.sql)
-
-## Normalization
-
-* [part-2-normalization-create.sql](part-2-normalization-create.sql)
-* [part-2-normalization-import.sql](part-2-normalization-import.sql)
-* [part-2-normalization-queries.sql](part-2-normalization-queries.sql)
+           ///////|
+          /////// |
+         ///////  |
+        |~~~~~|   |
+        |=====|   |
+        |  D  |   |
+        |  A  |   |
+        |  T  |   |
+        |  A  |   |
+        |  B  |   |
+        |  A  |   |
+        |  E  |   |
+        |     |   '
+    jgs |=====| /
+        '-----'`
 ```
+[ASCII art source](http://www.oocities.org/spunk1111/school.htm), with modifications
+
+### Prep
+
+In this part of the assignment, you'll work on parsing html with a library and regular expressions to extract course information data. Additionally, you'll use the `merge` function to put together data from two different DataFrames based on key. 
+
+1. Download the [Fall 2020 CS course schedule](https://cs.nyu.edu/dynamic/courses/schedule/?semester=fall_2020) by right-clicking and choosing "Save As". Save this in the root of your project repository; give it a short, but descriptive file name.
+2. Download the [course catalog](https://cs.nyu.edu/dynamic/courses/catalog/) by right-clicking and choosing "Save As". Save this in the root of your project repository; give it a short, but descriptive file name.
+3. Make sure to install any modules necessary for working with html 
+	* check out the slides on...
+	* [data formats on the web](https://cs.nyu.edu/courses/fall19/CSCI-UA.0480-003/_site/slides/data/web-data.html)
+4. Open up the empty notebook, `courses.ipynb` to work on this part of the assignment
+
+### Instructions
+
+#### 1. Read the 2020 course schedule into a DataFrame
+
+* the frame should have the following columns:
+	* Number-Section: the course number and section number
+	* Name: the name of the course
+	* Instructor: the name of the professor
+	* Time: the day(s) and time(s) the course meets
+	* (once you read in the data, you'll add a couple of rows)
+* [here's an image of some sample rows](../resources/img/hw03-courses/courses-rows.png)
+* once you've read in your data, break apart the `Number-Section` column into two separate columns: `Number` and `Section`
+	* `Number` is something _like_ `CSCI-UA.0480`
+	* `Section` is something _like_ `001`
+	* __use regular expressions with groups to do this__
+	* the `str` accessor method to use is `extract`
+	* [check out the end of the regex slides](../slides/python/regex.html) or the [official pandas docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.extract.html)
+* show:
+	* `info` to show the data types and counts
+	* the first 5 rows
+	* the last 5 rows
+	* a random sampling of 5 rows
+* hints: you'll have to...
+	* read in the html file
+	* parse the html
+	* pick out /extract the data
+	* it's very useful to use your browser's web inspector tools (right-click on element and inspect to see html and parent, sibling, and child elements
+	* ⚠️ [see this guide on using web inspector tools for chrome](https://developers.google.com/web/tools/chrome-devtools/dom/)
+	* note that in the parsing library we cover in the slides...
+	* `select` can be called on an element to find elements within it
+	* if a collection of elements is returned, you can index into it
+	* if you just one the first nested element, you can dot (`.`) the parent element, and use the name of the nested element next
+	* `.text` or `.get_text()` returns all of the text within an element (even nested elements!)
+	* pay attention to patterns in data (what _makes_ a course number, what element is a course number usually in?)
+	* also helpful to print out elements themselves (without using `.text`) to see what element was actually selected 
+	* some example markup and parsing code:
+
+~~~
+<section class='container'>
+  <div class='row'>
+    <p>Course Name: <a href="cs123.html">CS-123<a/></p>
+    <p>Alice Ahn</p>
+  </div>
+  <div class='row'>'
+    <p>Course Name: <a href="cs456.html">CS-456</a></p>
+    <p>Bob Bernstein</p>
+  </div>
+</container>
+~~~
+
+~~~
+# get every element in the section element with class container
+# that has the class attribute, row
+rows = rom.select('section.container .row')
+for row in rows:
+    # looping over this selection gives us each div element
+
+    # within each div element, find the paragraphs
+    paragraphs = row.select('p')
+
+    # show ALL text in first paragraph in current div
+    print(paragraphs[0].text) # on 1st iteration: Coure Name: CS-123
+
+    # dotting an element with a tag name retrieves the
+    # first nested element with that tag name
+    print(paragraphs[0].a.text) # on 1st iteration: CS-123
+
+    print(paragraphs[1].text) # on 1st iteration: Alice Ahn
+~~~
+
+#### 2. Read the 2020 course catalog into a DataFrame
+
+* the frame should have the following columns:
+	* Number: the course number 
+	* Prereqs: a text description of the prerequisites
+	* Points: the number of credits
+* [here's an image of some sample rows from another semester](../resources/img/hw03-courses/catalog-rows.png)
+* show:
+	* `info` to show the data types and counts
+	* the first 5 rows
+	* the last 5 rows
+	* a random sampling of 5 rows
+* use a similar parsing strategy as above to read in this DataFrame
+
+#### 3. Put together both DataFrames
+
+
+* create a new DataFrame by....
+* finding a way to show all scheduled classes in fall 2020 along with their points and prereqs
+* only show the following columns, in this order:
+	* Number: course number
+	* Name: course name
+	* Instructor: professor's name
+	* Time: meeting time
+	* Prereqs: course prerequisites
+	* Points: number of credits
+* hints:
+	* use [`pd.merge` to do this](../slides/python/pandas-join-combine.html)
+	* `how=left` will keep all rows in the first DataFrame
+* can you spot any anomalies or discrepancies?
+	* if so, in a markdown cell, describe any problem(s) you see
+	* additionally, describe how you might fix them
+	* lastly, based on the resulting DataFrame, describe the behavior of `how=left` on these particular DataFrames
+	* if you need to see all rows, use `pd.set_option('display.max_rows', 200)`
+
+## Part 2 - Working with an API
+
+```
+
+                              _,add8ba,
+                            ,d888888888b,
+                           d8888888888888b                        _,ad8ba,_
+                          d888888888888888)                     ,d888888888b,
+                          I8888888888888888 _________          ,8888888888888b
+                __________`Y88888888888888P"""""""""""baaa,__ ,888888888888888,
+            ,adP"""""""""""9888888888P""^                 ^""Y8888888888888888I
+         ,a8"^           ,d888P"888P^                           ^"Y8888888888P'
+       ,a8^            ,d8888'                                     ^Y8888888P'
+      a88'           ,d8888P'                                        I88P"^
+    ,d88'           d88888P'                                          "b,
+   ,d88'           d888888'                                            `b,
+  ,d88'           d888888I                                              `b,
+  d88I           ,8888888'            ___                                `b,
+ ,888'           d8888888          ,d88888b,              ____            `b,
+ d888           ,8888888I         d88888888b,           ,d8888b,           `b
+,8888           I8888888I        d8888888888I          ,88888888b           8,
+I8888           88888888b       d88888888888'          8888888888b          8I
+d8886           888888888       Y888888888P'           Y8888888888,        ,8b
+88888b          I88888888b      `Y8888888^             `Y888888888I        d88,
+Y88888b         `888888888b,      `""""^                `Y8888888P'       d888I
+`888888b         88888888888b,                           `Y8888P^        d88888
+ Y888888b       ,8888888888888ba,_          _______        `""^        ,d888888
+ I8888888b,    ,888888888888888888ba,_     d88888888b               ,ad8888888I
+ `888888888b,  I8888888888888888888888b,    ^"Y888P"^      ____.,ad88888888888I
+  88888888888b,`888888888888888888888888b,     ""      ad888888888888888888888'
+  8888888888888698888888888888888888888888b_,ad88ba,_,d88888888888888888888888
+  88888888888888888888888888888888888888888b,`"""^ d8888888888888888888888888I
+  8888888888888888888888888888888888888888888baaad888888888888888888888888888'
+  Y8888888888888888888888888888888888888888888888888888888888888888888888888P
+  I888888888888888888888888888888888888888888888P^  ^Y8888888888888888888888'
+  `Y88888888888888888P88888888888888888888888888'     ^88888888888888888888I
+   `Y8888888888888888 `8888888888888888888888888       8888888888888888888P'
+    `Y888888888888888  `888888888888888888888888,     ,888888888888888888P'
+     `Y88888888888888b  `88888888888888888888888I     I888888888888888888'
+       "Y8888888888888b  `8888888888888888888888I     I88888888888888888'
+         "Y88888888888P   `888888888888888888888b     d8888888888888888'
+            ^""""""""^     `Y88888888888888888888,    888888888888888P'
+                             "8888888888888888888b,   Y888888888888P^
+                              `Y888888888888888888b   `Y8888888P"^
+                                "Y8888888888888888P     `""""^
+```
+
+
+
+Find a JSON data source accessible via web from a source that has some information regarding the provenance of the data (_where did it come from!?_). Check out some [sources here](../data-sets.html). It can be an API or a simple JSON file. 
+
+1. <span class="hl">don't use the dog bites data set</span> (or _really_, any other data set that we've used in class, because, uh... we already cleaned it 🙁)
+2. (for the next part) write <span class="hl">code that's different from the programs that we've done in class</span> (it's not adequate to simply use class sample code with a different data set 🙅)
+
+### 1. Write some documentation 
+
+1. Open up the empty notebook, `project.ipynb`, in jupyterlab / jupyter notebook
+2. In a markdown cell, describe the data that you've selected
+	* link to any documentation about the data that you've found 
+	* discuss the origin of the data (what is it, who collected / generated it, how did they do it, etc.)
+3. Document the format of the data in a markdown cell
+	* it's a JSON file, so describe the keys / general structure (is it a list of objects, is it a single object per API call, etc.)
+	* determine the _likely_ data type (you can use regular python types or numpy types) of each field
+
+### 2. Retrieve the data, create a DataFrame
+
+Use any method to retrieve your json data and put it into a DataFrame. Some options are:
+
+* `urllib`
+* `requests` (must be installed)
+* `read_json` from `pandas`
+* a library made specifically for the API you're using
+
+In a markdown cell below your code, describe your methodology for retrieving the data and putting it into a DataFrame.
+
+### 3. Using the Data
+
+In a markdown cell, describe what you'd like to use the data for:
+
+* perhaps you would simply like to clean it up for further analysis later
+* maybe you have a hypothesis that can be backed by some basic data analysis
+
+Write code to achieve what you've written out above. The code should contain at least 4 (repetition is allowed) of the following:
+
+* 1 filling in missing values
+* 1 type conversion
+* 1 transform a column
+* 1 create a new calculated column
+* 1 visualization
+* 1 calculate summary statistics
+* 1 calculate value counts
+
+In a markdown cell above your code, write out which of the above requirements you're implementing. As you write your code, document your process in an accompanying markdown cell.
+
+## Part 3 - Prepping for Next Homework; Installing Postgres
