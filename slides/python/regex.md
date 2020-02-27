@@ -42,7 +42,7 @@ __In Python, a regular expression pattern can be represented by:__
 
 * {:.fragment} a string
 * {:.fragment} a "raw string" 
-	* {:.fragment} a raw string is a string literal prefixed with an `r`i
+	* {:.fragment} a raw string is a string literal prefixed with an `r`
 	* {:.fragment} `r"see \ behavior"` 
 	* {:.fragment} in a raw string, escape characters are literal!
 * {:.fragment} a "compiled" regular expression

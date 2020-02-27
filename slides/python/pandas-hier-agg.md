@@ -67,7 +67,7 @@ some_df.index = ['new', 'index', 'values']
 ```
 {:.fragment}
 
-There's also `.reindex`, which can fill values if the index new index is larger than the old index...
+There's also `.reindex`... reorder, leave out, etc.
 {:.fragment}
 
 ```

@@ -478,7 +478,15 @@ Time Series
 ","Python for Data Analysis
  
  * Ch 10: Data Aggregation and Group Operations
- * Ch 11: Time Series",,"MATERIAL:
+ * Ch 11: Time Series","__Homework #05__ – due Thursday 3/5 at 11pm
+
+
+* Screen Scraping, Using an API, Installing Postgres
+* To be posted
+
+<!--
+* [Homework #05 Instructions](assignments/04.html)
+-->","MATERIAL:
  TODO - Aggregation
  TODO - Time Series
  TODO - find data for aggregation and time series demo","Data Aggregation
@@ -505,7 +513,7 @@ Time Series
  * [creating tables](https://www.postgresql.org/docs/current/static/sql-createtable.html)
  * [INSERT](https://www.postgresql.org/docs/current/static/sql-insert.html)
  * [SELECT](https://www.postgresql.org/docs/current/static/sql-select.html)"
-y,,11,03-Mar ,Tue,"Relational Database Overview
+,,11,03-Mar ,Tue,"Relational Database Overview
 
 * [Databases Intro](slides/db/intro.html)
 
