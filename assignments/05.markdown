@@ -50,20 +50,13 @@ function onClick(evt) {
 }
 </script>
 
-# Assignment #5 - Database Design, Joins - Due Thursday, Nov 7th  at 11pm
+# Assignment #5 - Database Design, Joins - Due Thursday, March 5th  at 11pm
 
 In this homework, you'll:
 
-1. Use "business" requirements to build a database 
-	1. Create an ER Diagram 
-	2. Write CREATE table statements 
-	3. Write queries against the tables created
+1. "Screen scrape" data from a web site
+	* Using `requests` and `BeautifulSoup` to download and parse html
 2. Normalize the data from previous assignments and store it in a database
-	1. Normalize the data from previous assignments (or find a new data source)
-	2. Create an ER diagram representing the normalized data
-	3. Create the tables to support the ER diagram
-	4. Import and clean the data using SQL
-	5. Write queries against the imported data
 
 ## Part 1 - Combine Fa20 Course Info with Requirements
 
@@ -202,7 +195,7 @@ for row in rows:
 	* lastly, based on the resulting DataFrame, describe the behavior of `how=left` on these particular DataFrames
 	* if you need to see all rows, use `pd.set_option('display.max_rows', 200)`
 
-## Part 2 - Working with an API
+## Part 2 - Freeform Pandas / API Project
 
 ```
 
@@ -251,49 +244,52 @@ Y88888b         `888888888b,      `""""^                `Y8888888P'       d888I
 
 
 
-Find a JSON data source accessible via web from a source that has some information regarding the provenance of the data (_where did it come from!?_). Check out some [sources here](../data-sets.html). It can be an API or a simple JSON file. 
 
-1. <span class="hl">don't use the dog bites data set</span> (or _really_, any other data set that we've used in class, because, uh... we already cleaned it 🙁)
+Find an API that offers data that you're interested in. If you need help finding a data source, [here's a collective list of free APIs](https://github.com/public-apis/public-apis) or check out some additional [sources from our course site](../data-sets.html). Please try to work with an API that uses JSON as its data interchange formatj. 
+1. <span class="hl">don't use the tumblr or nytimes api</span> (or _really_, any other data set that we've used in class, 🙁)
 2. (for the next part) write <span class="hl">code that's different from the programs that we've done in class</span> (it's not adequate to simply use class sample code with a different data set 🙅)
 
 ### 1. Write some documentation 
 
 1. Open up the empty notebook, `project.ipynb`, in jupyterlab / jupyter notebook
-2. In a markdown cell, describe the data that you've selected
-	* link to any documentation about the data that you've found 
-	* discuss the origin of the data (what is it, who collected / generated it, how did they do it, etc.)
-3. Document the format of the data in a markdown cell
-	* it's a JSON file, so describe the keys / general structure (is it a list of objects, is it a single object per API call, etc.)
-	* determine the _likely_ data type (you can use regular python types or numpy types) of each field
+2. In a markdown cell, describe the API that you've selected
+	* what _is_ the data; if it's relevant, also add where the data came from (how it was collected)
+	* link to the API's documentation 
+	* link to the specific endpoint(s) that you'll be using (you'll have to make at least two requests, which can be multiple requests to the same endpoint, but with different parameters to retrieve multiple "pages" of data, or two requests to different _kinds_ of related data from the same API)
+	* if it's a JSON response, describe the keys / general structure (is it a list of objects, is it a single object per API call, etc.)
+3. Make a test request to the API
+	* <span class="hl">If the API requires a key</span>
+		* put that key in a variable clearly named `api_key` 
+		* add a comment above the variable saying `TODO: fill api key`... 
+		* before you commit, set the variable to an empty string; <span class="hl">you should not have your API keys in the repository</span>
+		* I will send out a google form for you to specify your API key... the grader will use this to run your notebook
+		* feel free to use a throwaway email account to procure your API key 
+		* (note that... typically API keys are in configuration files or environment variables, but to easy the complexity of bootstrapping your projects, we'll use this simple variable based method)
+	* describe the parameters that you'll be sending to the API end point (for example, do you have to send a page number? a search tag?)
+	* send a request to the API
+	* display some of the results (either as parsed json or as the raw response text)... so that the structure can be compared to the documented structure in the previous step
 
 ### 2. Retrieve the data, create a DataFrame
 
-Use any method to retrieve your json data and put it into a DataFrame. Some options are:
-
-* `urllib`
-* `requests` (must be installed)
-* `read_json` from `pandas`
-* a library made specifically for the API you're using
-
-In a markdown cell below your code, describe your methodology for retrieving the data and putting it into a DataFrame.
-
-### 3. Using the Data
-
-In a markdown cell, describe what you'd like to use the data for:
-
-* perhaps you would simply like to clean it up for further analysis later
-* maybe you have a hypothesis that can be backed by some basic data analysis
-
-Write code to achieve what you've written out above. The code should contain at least 4 (repetition is allowed) of the following:
-
-* 1 filling in missing values
-* 1 type conversion
-* 1 transform a column
-* 1 create a new calculated column
-* 1 visualization
-* 1 calculate summary statistics
-* 1 calculate value counts
+1. Make at least two requests to the API "endpoint(s)" and load the data into a DataFrame
+	* For example if there's pagination, get at least 2 pages and combine into a single DataFrame
+	* Or if there are two endpoints that can be joined using `merge`, requests data from both
+2. In a markdown cell, describe what you'd like to use the data for:
+	* perhaps you would simply like to clean it up for further analysis later
+	* maybe you have a hypothesis that can be backed by some basic data analysis
+3. Write code to achieve what you've written out above using the DataFrame you've constructed. The code should contain at least 2 of the following:
+	* 1 groupby
+	* 1 multi index / hierarchical indexing
+	* 1 merge
+	* 1 concat or append
 
 In a markdown cell above your code, write out which of the above requirements you're implementing. As you write your code, document your process in an accompanying markdown cell.
 
 ## Part 3 - Prepping for Next Homework; Installing Postgres
+
+To prepare for the following homework, please to install postgres, the relational database that we'll be using for the next few weeks. Install links are below:
+
+* MacOS: https://www.postgresql.org/download/macosx/ (Interactive installer by EnterpriseDB)
+* Windows 10: https://www.postgresql.org/download/windows/ (Interactive installer by EnterpriseDB)
+* Linux: use your distribution's package manager (apt, yum, pacman)
+
