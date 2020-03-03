@@ -79,10 +79,11 @@ __Installation installs both server and client:__
 * `pg_ctl restart` - stop and then start
 * `pg_ctl reload` - reread config, but no need to completely stop and start again
 
-Want to stop specifying the `-D` when starting?
+Want to stop specifying the `-D` when starting?  ...use `export PGDATA=/foo/bar`, add export to`.bashrc` or add export to `bash_profile` ... or modify `postgresql.conf`
+{:.fragment}
 
-* {:.fragment} `export PGDATA=/foo/bar`, add export to`.bashrc` or add export to `bash_profile` ... or modify `postgresql.conf`
-
+<span class="hl">If `pg_ctl` isn't available, then the instance installed must be managed with different tools, like `launchctl` on MacOS, the Services app on Windows, etc.!</span>
+{:.fragment}
 
 </section>
 

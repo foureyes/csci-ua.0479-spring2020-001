@@ -151,7 +151,7 @@ __This client/server architecture implies that:__ &rarr;
 ## Security
 
 
-__Database security encompasses the working with__ &rarr;
+__Database security encompasses working with__ &rarr;
 
 
 1. {:.fragment} the facilities provided by the database for access control and encryption
@@ -468,7 +468,7 @@ Of course, there are a [bunch of others](https://en.wikipedia.org/wiki/Document-
 
 __Some use cases for document stores include:__
 
-* applications that require semi structured data / data that has does not have rigid requirements (perhaps a resume)
+* applications that require semi structured data / data that does not have rigid requirements (perhaps a resume)
 * again, large volumes of data
 * _fluid_ data or data whose structure is prone to change
 
@@ -514,6 +514,25 @@ __Mainly because of wide support in the Python community (not necessarily for da
 
 Again... you'll find very few differences between mysql and postgres for the work that we do, and as new versions of each are released, they usually catch up in terms of features and performance.
 {:.fragment}
+
+
+</section>
+
+<section markdown="block">
+## Relational Database / RDBMS vs Pandas? 🐼
+
+__Let's discuss__ &rarr;
+
+Not really the same at all!
+{:.fragment}
+
+* {:.fragment} a service!
+* {:.fragment} multi-client / concurrent access
+* {:.fragment} authentication and authorization / role based access
+* {:.fragment} transactions
+* {:.fragment} ACID compliance
+* {:.fragment} replication, logging, clustering, etc.
+
 
 
 </section>
