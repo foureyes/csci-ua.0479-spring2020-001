@@ -610,7 +610,7 @@ Commandline Client, SQL, and Simple Queries
  * [WHERE](http://www.postgresqltutorial.com/postgresql-where/)
  * [LIMIT](http://www.postgresqltutorial.com/postgresql-limit/)
  * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)"
-,,12,05-Mar ,Thu,"Basic Postgres Administration
+y,,12,05-Mar ,Thu,"Basic Postgres Administration
 
 Data Types
 
@@ -660,10 +660,10 @@ Aggregation and Grouping
  
  postgresqltutorial
 
- * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)","<!-- __Homework #04__ – due Fri 10/18 at 11pm
+ * [COPY, Import](http://www.postgresqltutorial.com/import-csv-file-into-posgresql-table/)","__Homework #04__ – due Fri 10/18 at 11pm
 
 * [Homework #04](assignments/04.html)
--->
+
 ",,"Basic Postgres Administration
 
 Files
