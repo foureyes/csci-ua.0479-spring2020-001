@@ -202,6 +202,13 @@ These are some high level categories where these types can fit in:
 * {:.fragment} date and time
 * {:.fragment} _other_
 
+Note that as we examine types, we'll use:
+{:.fragment}
+
+* {:.fragment} `SELECT` statements to run operations and functions without tables (!?)
+* {:.fragment} the `pg_typeof` function to determine the type of a value
+* {:.fragment} `value::type` to coerce to a type
+
 
 </section>
 
@@ -282,6 +289,19 @@ It's sometimes useful to store date or time date in a regular `integer` field. F
 </section>
 
 <section markdown="block">
+## Booleans
+
+__Boolean literals can be represented multiple ways!__ &rarr;
+
+* {:.fragment} `true`
+* {:.fragment} `'t'`
+* {:.fragment} even `'yes'`, `'y'`, quoted true, etc...
+
+However, when querying, the representation can depend on the client - for example, psql shows `t` or `f`, but datagrip shows a check box
+{:.fragment}
+
+</section>
+<section markdown="block">
 ## Many Others!
 
 __Check out this [table of all data types](https://www.postgresql.org/docs/10/static/datatype.html#DATATYPE-TABLE)!__ &rarr;
@@ -307,16 +327,22 @@ __Some considerations when storing currency:__  &rarr;
 * performance
 {:.fragment}
 
-Options:
+</section>
+
+<section markdown="block">
+## Storing Money Continued
+
+__What are some potential options for storing money?__:
 {:.fragment}
 
-* `numeric` - exact, but slow... (choose `scale` carefully; 2 may not be adequate!)
-* `money` - stores as cents, so exact for addition, subtraction, multiplication... but converts to floating point type for division 
+* {:.fragment} `integer` - store cents manually, convert in application code (how to handle fractional cents, though!)
+* {:.fragment} `numeric` - exact, but slow... (choose `scale` carefully; 2 likely not adequate!)
+* {:.fragment} `money` - stores as cents, so exact for addition, subtraction, multiplication... but converts to floating point type for division 
 	* handles input in different formats, but does not deal with conversion / multi-currency
 	* _fast_ (basically int operations since dealing with cents)
-* any rounding, conversion logic for either should be handled by application code
-{:.fragment}
 
+Any rounding, conversion logic for either should be handled by application code
+{:.fragment}
 
 </section>
 
