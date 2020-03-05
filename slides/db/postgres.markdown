@@ -193,9 +193,7 @@ Use `\?` to show available `psql` commands
 <section markdown="block">
 ## Types
 
-__PostgreSQL has _a lot_ of types (you can even create your own!)__
-
-These are some high level categories where these types can fit in:
+__PostgreSQL has _a lot_ of types (you can even create your own!)__. These are some high level categories where these types can fit in:
 
 * {:.fragment} numeric
 * {:.fragment} strings
@@ -252,6 +250,7 @@ __`real` and `double precision` are floating point types__ &rarr;
 	* {:.fragment} `0.1 + 0.2` 
 	* {:.fragment} yields `0.30000000000000004`
 * {:.fragment} if exact storage and calculations is necessary, use numeric 
+* {:.fragment} `SELECT 0.15::numeric < 0.15::real -- WAT!?`
 
 </section>
 
@@ -505,10 +504,10 @@ __Use a <span class="hl">SELECT</span> statement to _read_ data__ &rarr;
 	* {:.fragment} `*` means all columns
 	* {:.fragment} arithmetic operators and functions / expressions can be used here 
 	* {:.fragment} `DISTINCT` for only unique values
-* then, optionally, keyword `FROM tablename` ...to specify which table to query 
-* ...optionally `WHERE conditions` to specify how to filter rows
-* ...optionally `ORDER BY ordering` for sorting
-* ...optionally `LIMIT num` to restrict the number of rows returned
+3. {:.fragment} then, optionally, keyword `FROM tablename` ...to specify which table to query 
+4. {:.fragment} optionally `WHERE cond` to specify how to filter rows
+5. {:.fragment} optionally `ORDER BY ordering` for sorting
+6. {:.fragment} optionally `LIMIT num` to restrict the number of rows returned
 
 </section>
 
@@ -522,7 +521,7 @@ __Use a <span class="hl">SELECT</span> statement to _read_ data__ &rarr;
 SELECT col1, col2, col3 * 2 as new_col    
 
 	-- from table, some_Table
-    FROM some_table
+	FROM some_table
 
 	-- the value in col1 must be > 1
 	-- for the row to be returned
@@ -659,7 +658,7 @@ SELECT netid, first FROM student
 <section markdown="block">
 ## Ordering
 
-__Add an `ORDER BY` clause at the end of your `SELECT` to specify ascending orderi__ &rarr;
+__Add an `ORDER BY` clause at the end of your `SELECT` to specify ascending ordering__ &rarr;
 
 <pre><code data-trim contenteditable>
 SELECT * FROM student 

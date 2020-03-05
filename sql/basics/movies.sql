@@ -32,3 +32,39 @@ INSERT INTO movie (title, director, year, runtime, genre, budget, gross)
 		('Hellboy', 'Guillermo del Toro', '2004-01-01', 122, 'Super Hero', 66000000, 99300000);
 
 	
+class11(# ); -- creates a table called student
+class11=# -- describes the student table
+class11=# insert into student (netid, class, first, last, midtermscore) values ('jjv222', 'database stuff', 'joe', 'v', 80); -- add a row to student table
+
+-- TRY THE FOLLOWING!
+---------------------
+-- import this file (a file containing sql statements)
+-- list all tables
+-- describe the movie table
+-- show all movies
+-- only show title, director and gross
+-- order rows by gross ascending
+-- order rows by gross descending
+-- try ordering by director ascending
+-- use both director and gross to order rows
+-- query all movies again...
+-- now only show distinct genres
+-- only show rows that have a genre of Science Fiction
+-- only show rows that have a genre that's not Science Fiction
+-- only show rows that have a genre has thriller in it (ignore case)
+-- use and to put together two condition (thrillers by Katheryn Bigelow)
+-- show budget and gross
+-- calculate return on investment (gross minus budget over budget; include expression in list of columns)
+-- order by a calculated column (which we've named roi)
+-- an example of casting to numeric... convert roi to numeric type!
+-- using round (two argument version of round only works on numeric values)... btw, pg_typeof returns type of column
+-- note that an aliased column cannot be used in where clause... try to find movies with negative roi ... wat!?
+-- so, use calculation in where clause
+-- add an roi column to movie so we can permanently have that field: alter table [table_name] add column [column_name] [type]
+-- select some movies to see the new column!  currently, new column has null values (blank in psql)
+-- update all rows so that roi is set to a value based on other columns: update [table_name] set [assignment] where [cond]
+-- fix duplicate genre
+-- see... now Sci-Fi is folded into Science Fiction
+-- group all rows that have same genre and count them
+-- use having to filter groups
+-- oh, btw, you can get file locations of your configs with this query
