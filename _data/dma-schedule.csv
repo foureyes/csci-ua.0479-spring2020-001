@@ -691,11 +691,13 @@ Queries Continued
  
  * Ch 6: Joining Tables in a Relational Database
  * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)"
-y,,13,10-Mar ,Tue,"Review First Part of the Semester
+,,13,10-Mar ,Tue,"Review First Part of the Semester
 
+* Some sample questions contain topics not on the exam (specifically group by/having)
+* [Likely Exam Reference (Different from Reference in Samples)](resources/handouts/midterm/dma-midterm-reference.pdf)
 * [Sample Questions and Solution](resources/handouts/midterm/midterm_sample_questions.pdf)
-* More questions to be posted
-* The reference is still a draft
+* [Sample Questions Set 2](resources/handouts/midterm/midterm_practice_2.pdf)
+* [Sample Questions Set 2 Solutions](resources/handouts/midterm/midterm_practice_2_solutions.pdf) 
 * [Notes from class re: exam topics / format](slides/midterm.html)
 * [Midterm Review Notebook from 2018](notebooks/midterm-review/review.ipynb) (notebook)
 ",,,,"Review First Part of the Semester

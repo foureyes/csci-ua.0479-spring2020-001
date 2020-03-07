@@ -83,11 +83,12 @@ title: "Exam Topics / Format"
 </section>
 
 <section markdown="block">
-## Other
+## Data from the Web / Other
 
+* using apis, screen scraping
+* basic css selectors
 * summary statistics
 * basic regex
-* basic css selectors
 
 </section>
 <section markdown="block">
@@ -99,14 +100,16 @@ title: "Exam Topics / Format"
 * sql
 	* creating a table
 	* select
+	* update
+
+{% comment %}
+* use sql to analyze data / clean data
 		* group by
 		* having
 		* where
 		* aggregate funcs
-	* update
-	* alter
-	* delete
-* use sql to analyze data / clean data
+
+{% endcomment %}
 
 </section>
 
