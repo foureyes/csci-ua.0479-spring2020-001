@@ -65,4 +65,3 @@ INSERT INTO movie (title, director, year, runtime, genre, budget, gross)
 -- see... now Sci-Fi is folded into Science Fiction
 -- group all rows that have same genre and count them
 -- use having to filter groups
--- oh, btw, you can get file locations of your configs with this query
