@@ -39,13 +39,13 @@ INSERT INTO movie (title, director, year, runtime, genre, budget, gross)
 -- list all tables
 -- describe the movie table
 -- show all movies
--- only show title, director and gross
+-- only show the name of the movie, who directed it, and how much money it made!
 -- order rows by gross ascending
 -- order rows by gross descending
 -- try ordering by director ascending
 -- use both director and gross to order rows
 -- query all movies again...
--- now only show distinct genres
+-- now only genres, but without duplicates
 -- only show rows that have a genre of Science Fiction
 -- only show rows that have a genre that's not Science Fiction
 -- only show rows that have a genre has thriller in it (ignore case)
