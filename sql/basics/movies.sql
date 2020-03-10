@@ -32,9 +32,6 @@ INSERT INTO movie (title, director, year, runtime, genre, budget, gross)
 		('Hellboy', 'Guillermo del Toro', '2004-01-01', 122, 'Super Hero', 66000000, 99300000);
 
 	
-class11(# ); -- creates a table called student
-class11=# -- describes the student table
-class11=# insert into student (netid, class, first, last, midtermscore) values ('jjv222', 'database stuff', 'joe', 'v', 80); -- add a row to student table
 
 -- TRY THE FOLLOWING!
 ---------------------
