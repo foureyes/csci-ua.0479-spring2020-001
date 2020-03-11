@@ -23,7 +23,7 @@ INSERT INTO movie (title, director, year, runtime, genre, budget, gross)
 		('Alien', 'Ridley Scott', '1979-01-01', 117, 'Sci-Fi', 11000000, 203600000),
 		('Alien Covenant', 'Ridley Scott', '1982-01-01', 122, 'Science Fiction', 111000000, 240900000),
 		('2046', 'Wong Kar-wai', '1982-01-01', 122, 'Drama', 12000000, 19500000),
-		('Wonder Woman', 'Wong Kar-wai', '2017-01-01', 141, 'Super Hero', 150000000, 821000000),
+		('Wonder Woman', 'Patty Jenkins', '2017-01-01', 141, 'Super Hero', 150000000, 821000000),
 		('La Piel Que Habito (The Skin I Live In)', 'Pedro Almodóvar', '2011-01-01', 120, 'Horror', 13500000, 30800000),
 		('Los Abrazos Rotos (Broken Embraces)', 'Pedro Almodóvar', '2009-01-01', 128, 'Romantic Thriller', 18000000, 31000000),
 		('El Laberinto del Fauno (Pan''s Labyrinth)', 'Guillermo del Toro', '2006-01-01', 119, 'Dark Fantasy Horror', 19000000, 83300000),

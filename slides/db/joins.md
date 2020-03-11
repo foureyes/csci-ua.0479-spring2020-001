@@ -229,7 +229,7 @@ title           | title          | year | year
 <section markdown="block">
 ## Self Join Attempt #2
 
-Well. __Thad didn't work__ 😞... since we're matching on year, we're getting movies that match themselves on both tables!
+Well. __That didn't work__ 😞... since we're matching on year, we're getting movies that match themselves on both tables!
 
 __What could we do to fix this?__ &rarr;
 

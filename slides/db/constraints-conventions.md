@@ -259,7 +259,7 @@ __Let's try inserting some values__ What happens if one of the columns in our co
 </section>
 
 <section markdown="block">
-## Choosing / Creating a Primary Key
+## Choosing a Primary Key
 
 __A primary key can be created by using existing column(s) (natural) or creating a new column (articial)__ &rarr;
 
@@ -289,7 +289,7 @@ __Values like ssn, license number, or even email address may seem like good prim
 </section>
 
 <section markdown="block">
-##  Choosing / Creating a Primary Key Continued
+##  Primary Key Continued
 
 A __surrogate key__ or __artifical key__, on the other hand, is a new column added with the purpose of serving as a primary key. 
 

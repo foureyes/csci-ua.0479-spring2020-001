@@ -720,7 +720,7 @@ y,exam,14,12-Mar ,Thu,Exam #1,,,,Exam #1,"Relational Database Design and Impleme
  * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)"
 y,holiday,,17-Mar ,Tue,No Class Scheduled (Spring Break),,,,,
 y,holiday,,19-Mar ,Thu,No Class Scheduled (Spring Break),,,,,
-y,,15,24-Mar ,Tue,"Constraints and Naming Conventions
+,,15,24-Mar ,Tue,"Constraints and Naming Conventions
 
 * [Constraints and Naming Conventions](slides/db/constraints-conventions.html)
 
@@ -733,7 +733,10 @@ Multiple Tables (Joins)
 ","Practical SQL
  
  * Ch 6: Joining Tables in a Relational Database
- * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)`",,"ADD QUIZ FOR THESE TOPICS!
+ * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)","__Homework #06__ – due Thursday 3/19 at 11pm
+
+* [Homework #06](assignments/06.html)
+","ADD QUIZ FOR THESE TOPICS!
 
 MATERIAL:
 
@@ -756,7 +759,7 @@ Sample Questions for Midterm and About Exam
 * The reference is still a draft!
 * [Notes from class re: exam topics / format](slides/midterm.html)
 ",
-y,,16,26-Mar ,Thu,"Multiple Tables (Joins) Continued
+,,16,26-Mar ,Thu,"Multiple Tables (Joins) Continued
 
 * See previous slides on Joins
 
