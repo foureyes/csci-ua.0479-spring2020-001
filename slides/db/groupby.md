@@ -20,7 +20,7 @@ __Adding a `GROUP BY` clause allows the grouping of rows and the application of 
 
 * {:.fragment} the `GROUP BY` clause goes after `FROM` and `WHERE`, and must be followed by the column name(s) to form groups with
 * {:.fragment} it's used to group the rows __after__ rows are filtered out by `WHERE`
-* {:.fragment} an aggregate function be applied to each group
+* {:.fragment} an aggregate function can be applied to each group
 * {:.fragment} not the same as `DISTINCT` (which only gives back unique values, no aggregation)
 
 
