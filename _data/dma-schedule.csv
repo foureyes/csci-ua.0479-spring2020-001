@@ -623,6 +623,7 @@ Importing Data
 * [Importing Data](slides/db/import.html)
 * [2010 Census Data](https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2010.html) - School Districts – Unified (Note that encoding is LATIN1, so import in transcript specifies this)
 * [Record Layout for 2010 School District Census Data](https://www.census.gov/programs-surveys/geography/technical-documentation/records-layout/gaz-record-layouts.html)
+8 [2010 Census Data Notes Regarding Encoding](https://www.census.gov/programs-surveys/geography/technical-documentation/user-note/special-characters.html)
 * [Transcript of SQL for import](sql/basics/import-transcript.sql) (sql file)
 
 Aggregation and Grouping
@@ -630,6 +631,7 @@ Aggregation and Grouping
 * [Group By, Aggregation](slides/db/groupby.html)
 * [Students](sql/basics/students.sql) (sql file for import)
 * [Metal Content of Consumer Products data set](https://data.cityofnewyork.us/Health/Metal-Content-of-Consumer-Products-Tested-by-the-N/da9u-wz3r)
+* [CREATE table for Metal Content of Consumer Products](sql/basics/agg-metal.sql) (sql file)
 
 Review
 
