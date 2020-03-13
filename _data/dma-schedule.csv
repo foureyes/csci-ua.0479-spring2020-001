@@ -699,7 +699,11 @@ Queries Continued
  
  * Ch 6: Joining Tables in a Relational Database
  * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)"
-,,13,10-Mar ,Tue,"Review First Part of the Semester
+,,13,10-Mar ,Tue,"
+* __EXAM MOVED TO 3/31__
+* See previous week’s slides for SQL Basics
+
+Review First Part of the Semester
 
 * Some sample questions contain topics not on the exam (specifically group by/having)
 * [Likely Exam Reference (Different from Reference in Samples)](resources/handouts/midterm/dma-midterm-reference.pdf)
@@ -712,23 +716,7 @@ Queries Continued
 
 * [midterm review notebook](notebooks/midterm-review/review.ipynb)
 ",
-y,exam,14,12-Mar ,Thu,Exam #1,,,,Exam #1,"Relational Database Design and Implementation
- 
- Ch 3: Why Good Design Matters
- Ch 4: Entities and Relationships
- Ch 5: The Relational Data Model
- 
- Online Resources
- 
- * [Normalization (from MariaDB docs)](https://mariadb.com/kb/en/library/database-normalization/)
- * [Foreign key constraint](http://www.postgresqltutorial.com/postgresql-foreign-key/)
- * [Inner join](http://www.postgresqltutorial.com/postgresql-inner-join/)
- * [Left outer join](http://www.postgresqltutorial.com/postgresql-left-join/)
- * [Full outer join](http://www.postgresqltutorial.com/postgresql-full-outer-join/)
- * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)"
-y,holiday,,17-Mar ,Tue,No Class Scheduled (Spring Break),,,,,
-y,holiday,,19-Mar ,Thu,No Class Scheduled (Spring Break),,,,,
-,,15,24-Mar ,Tue,"Constraints and Naming Conventions
+,,14,12-Mar ,Thu,"Constraints and Naming Conventions
 
 * [Constraints and Naming Conventions](slides/db/constraints-conventions.html)
 
@@ -741,10 +729,10 @@ Multiple Tables (Joins)
 ","Practical SQL
  
  * Ch 6: Joining Tables in a Relational Database
- * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)","__Homework #06__ – due Thursday 3/19 at 11pm
+ * Ch 7: Table Design That Works for You (Naming Tables, Columns, and Other Identifiers, Controlling Column Values with Constraints)","__Homework #06__ – due Thursday 4/2 at 11pm
 
 * [Homework #06](assignments/06.html)
-","ADD QUIZ FOR THESE TOPICS!
+* repositories will be created after break","ADD QUIZ FOR THESE TOPICS!
 
 MATERIAL:
 
@@ -766,8 +754,23 @@ Sample Questions for Midterm and About Exam
 * [Sample Questions and Solution](resources/handouts/midterm/midterm_sample_questions.pdf)
 * The reference is still a draft!
 * [Notes from class re: exam topics / format](slides/midterm.html)
-",
-,,16,26-Mar ,Thu,"Multiple Tables (Joins) Continued
+","Relational Database Design and Implementation
+ 
+ Ch 3: Why Good Design Matters
+ Ch 4: Entities and Relationships
+ Ch 5: The Relational Data Model
+ 
+ Online Resources
+ 
+ * [Normalization (from MariaDB docs)](https://mariadb.com/kb/en/library/database-normalization/)
+ * [Foreign key constraint](http://www.postgresqltutorial.com/postgresql-foreign-key/)
+ * [Inner join](http://www.postgresqltutorial.com/postgresql-inner-join/)
+ * [Left outer join](http://www.postgresqltutorial.com/postgresql-left-join/)
+ * [Full outer join](http://www.postgresqltutorial.com/postgresql-full-outer-join/)
+ * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)"
+y,holiday,,17-Mar ,Tue,No Class Scheduled (Spring Break),,,,,
+y,holiday,,19-Mar ,Thu,No Class Scheduled (Spring Break),,,,,
+,,15,24-Mar ,Tue,"Multiple Tables (Joins) Continued
 
 * See previous slides on Joins
 
@@ -796,7 +799,36 @@ Database Design, Entities and Relationships, The Relational Data Model and Diagr
  * [Inner join](http://www.postgresqltutorial.com/postgresql-inner-join/)
  * [Left outer join](http://www.postgresqltutorial.com/postgresql-left-join/)
  * [Full outer join](http://www.postgresqltutorial.com/postgresql-full-outer-join/)
- * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)",,,"Multiple Tables (Joins) Continued
+ * [Self join](http://www.postgresqltutorial.com/postgresql-self-join/)",,,,
+,,16,26-Mar ,Thu,"Review Again
+
+* potentially review again to prep for exam…
+
+Normalization
+
+*  [Normalization](slides/db/normalization.html) 
+
+Relational Database Design Rules / Tips
+
+* Database Design Demo with ER Diagram (Online Food Ordering Site?)
+* [pgmodeler for Data Modeling and Reverse Engineering](https://pgmodeler.io/)
+","Relational Database Design and Implementation
+ 
+ * Ch 6. Normalization
+ * Ch 8. Codd's Rules for Relational Database Design
+ * Ch 9. Using SQL to Implement a Relational Design
+","<!--
+
+__Homework #05__ – due Thursday 4/2 at 11pm
+
+
+
+* [Homework #05](assignments/05.html)
+
+-->
+
+
+",,"Multiple Tables (Joins) Continued
 
 
 * [Movies Revisited](sql/joins/movies.sql)
@@ -823,27 +855,7 @@ Diagrams","Practical SQL
  
  * Ch 12. Advanced Query Techniques
  * Ch 13: Mining Text to Find Meaningful Data"
-y,,17,31-Mar ,Tue,"Normalization
-
-*  [Normalization](slides/db/normalization.html) 
-
-Relational Database Design Rules / Tips
-
-* Database Design Demo with ER Diagram (Online Food Ordering Site?)
-* [pgmodeler for Data Modeling and Reverse Engineering](https://pgmodeler.io/)
-","Relational Database Design and Implementation
- 
- * Ch 6. Normalization
- * Ch 8. Codd's Rules for Relational Database Design
- * Ch 9. Using SQL to Implement a Relational Design
-","__Homework #05__ – due Thursday 11/7 at 11pm
-
-
-
-* [Homework #05](assignments/05.html)
-
-
-",,"Subqueries
+,exam,17,31-Mar ,Tue,"Exam: small timed project, online quiz",,,,"Subqueries
 
 * TODO - subqueries
 
