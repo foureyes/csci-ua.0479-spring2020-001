@@ -15,6 +15,130 @@ title: "Joins"
 </section>
 
 <section markdown="block">
+## Reviewing Constraints 
+
+__If you were tasked with storing course data in your database, what table name, fields, types, and constraints would you use?__ &rarr;
+
+One potential solution might be:
+{:.fragment}
+
+<pre><code data-trim contenteditable>
+create table course (
+  course_number text,
+  section_number text,
+  semester text,
+  year smallint constraint year_after_found check (year > 1831),
+  title text,
+  description text,
+  primary key (course_number, section_number, semester, year)
+);
+</code></pre>
+{:.fragment}
+
+* note the composite primary key as a table level constraint
+* the generic constraint on year 
+{:.fragment}
+
+
+</section>
+
+<section markdown="block">
+## Let's Add Some Rows!
+
+__Based on the previous table definition, which of these queries will fail with an error, and which ones will work?__ &rarr;
+
+<pre><code data-trim contenteditable>
+insert into course values 
+  ('0480', '008', 'spring', 1800, 'ait', 'web stuff');
+insert into course values 
+  ('0480', '008', 'spring', 2020, 'ait', 'web stuff');
+insert into course values 
+  ('0480', '001', 'spring', 2020, 'e-sports', 'video games!');
+insert into course 
+  (course_number, semester, year, title) 
+values 
+  ('0479', 'spring', 2020, 'dma');
+</code></pre>
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Foreign Keys Reviewed
+
+__Now let's try to model a user on a web site... and their associated addresses__ &rarr;
+
+<pre><code data-trim contenteditable>
+create table web_user (
+  web_user_id serial primary key,
+  username varchar(8) not null unique,
+  email text
+);
+</code></pre>
+{:.fragment}
+
+
+<pre><code data-trim contenteditable>
+insert into web_user (username, email) values ('jversoza', 'jversoza@foo.bar.baz');
+</code></pre>
+{:.fragment}
+</section>
+
+<section markdown="block">
+## User and Addresses Continued
+
+__...and the associated address table__ &rarr;
+
+<pre><code data-trim contenteditable>
+create table address (
+  address_id serial primary key, 
+  street text,
+  city text,
+  state varchar(2),
+  zip text, 
+  web_user_id integer references web_user(web_user_id)
+);
+</code></pre>
+{:.fragment}
+
+<pre><code data-trim contenteditable>
+insert into address (street, city, state, zip, web_user_id) values ('123 a st', 'brooklyn', 'ny', '11211', 1)
+;
+</code></pre>
+{:.fragment}
+</section>
+
+<section markdown="block">
+## Dropping or Deleting
+
+__What do you think will happen if these queries are run?__ &rarr;
+
+<pre><code data-trim contenteditable>
+insert into address 
+  (street, city, state, zip, web_user_id) 
+values 
+  ('123 a st', 'brooklyn', 'ny', '11211', 5);
+delete from web_user;
+drop table web_user;
+delete from address;
+drop table address;
+</code></pre>
+{:.fragment}
+</section>
+
+<section markdown="block">
+## A Preview...
+
+__How can we view a person and their related addresses__ &rarr;
+
+<pre><code data-trim contenteditable>
+select * from web_user u 
+	inner join address a on u.web_user_id = a.web_user_id;
+</code></pre>
+{:.fragment}
+
+</section>
+<section markdown="block">
 ## Joins
 
 __A relational algebra operation implemented in SQL... that combines columns from one or more tables__
