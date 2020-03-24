@@ -371,12 +371,51 @@ Uh... isn't this the same as one-to-many?
 * {:.fragment} if you want exactly one-to-one, you can put an fk in each table and use [deferred constraints in a transaction to insert rows in each table](https://www.postgresql.org/docs/12/sql-set-constraints.html)
 </section>
 
-
 <section markdown="block">
 ## Many to Many
 
+__What if we wanted movies to have many genres, and genres to have many movies?__
 
-__For many-to-many, create a third table that houses ids of both other tables__ &rarr;
+* Dune is both Sci-Fi and Drama,
+* Sci-Fi is a genre that both Dune and A Quiet Place have
+{:.fragment}
+
+
+Maybe `movie` could contains `genre_id` and  `genre` can contain `movie_id`
+{:.fragment}
+
+🙅‍♀️... nope this __isn't the best solution__! why not?
+{:.fragment}
+
+You'd have to put place duplicate rows _somewhere_:
+{:.fragment}
+
+* {:.header .colspan} movie
+* {:.header} movie_id (pk), title, genre_id
+* 1, Dune, 57
+* 1, Dune, 58
+* 2, A Quiet Place, 57
+{:.fragment}
+{:.table}
+
+* {:.header .colspan} genre
+* {:.header} genre_id (pk), name, movie_id
+* 57, Sci-Fi, 1
+* 57, Sci-Fi, 2
+* 58, Drama, 1
+{:.fragment}
+{:.table}
+
+
+</section>
+
+
+<section markdown="block">
+## Many to Many II 
+
+
+__For many-to-many, create a third table that houses ids of both other tables__ (so only ids are duplicated) &rarr;
+
 
 * {:.header .colspan} movie
 * {:.header} movie_id (pk), title
