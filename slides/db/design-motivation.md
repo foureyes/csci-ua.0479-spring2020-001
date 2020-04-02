@@ -86,7 +86,7 @@ In our example... &rarr;
 Typically, insertion anomalies arise from having data from more than one _entity_ in a table... 
 {:.fragment}
 
-Consequently, inserting data about one entity forces the insertion of data from another entity even when that extra data in not needed.
+Consequently, inserting data about one entity forces the insertion of data from another entity even when that extra data is not needed.
 {:.fragment}
 
 

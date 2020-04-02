@@ -23,7 +23,7 @@ The term __relational database__ doesn't stem from the fact that a database cont
 * {:.fragment} so... a relational database is a collection of "relations" (a bunch of tables)
 * {:.fragment} it's a little more nuanced than this, as relations have certain properties
 	* most of those properties are directly applicable to the tables that represent them
-* {:.fragment} this idea of a _relational data model_ came from Edgar (E.F.) Codd in the early 1970's... and has been refined by other since...
+* {:.fragment} this idea of a _relational data model_ came from Edgar (E.F.) Codd in the early 1970's... and has been refined by others since...
 </section>
 
 
@@ -396,8 +396,7 @@ With that said, there are additional normal forms:
 {:.fragment}
 
 * {:.fragment} __4NF__: 3NF + "a record type should not contain two or more __independent__ multi-valued facts about an entity"
-	* `name`, `skillz`, `language`
-	* where `skillz` and `langauge` are independent
+	* [See pizza example on wikipedia](https://en.wikipedia.org/wiki/Fourth_normal_form)
 	* (always seems like the answer is more tables, amirite?)
 * {:.fragment} __5NF__: 4NF + "information content cannot be reconstructed from several smaller record types, i.e., from record types each having fewer fields than the original record" 
 
