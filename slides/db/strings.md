@@ -272,8 +272,11 @@ select trim('   hi   ');
 
 __Based on some of the functions and operators that we've seen, can we can get a list of the distinct terms in all rows?__ &rarr;
 
+<pre><code data-trim contenteditable>
 select distinct upper(trim(unnest(string_to_array(terms, ',')))) 
 from caers_event;
+</code></pre>
+{:.fragment}
 
 </section>
 
