@@ -285,7 +285,7 @@ from caers_event;
 
 __Sometimes it's useful to aggregate all strings in a group into a single value__ &rarr;
 
-* `string_agg(col_name, join_string`
+* `string_agg(col_name, join_string)`
 * like `max`, `count`, etc. ... `string_agg` is an aggregate function
 * it will concatenate all values in the group for a particular column
 * here's a contrived example of concatenation...
