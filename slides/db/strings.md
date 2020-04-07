@@ -108,7 +108,21 @@ limit 1;
 </section>
 
 <section markdown="block">
-## A Side Note on Arrays
+## Detour on Ordering with Null
+
+__The where clause in the previous slide filtered out nulls. Let's see what happens without that?__ &rarr;
+
+* {:.fragment} `null` values are placed on top when ordering by `desc`
+* {:.fragment} to get around this, we can use `nulls last`
+
+(we'll see more about working with null values later)
+{:.fragment}
+
+
+</section>
+
+<section markdown="block">
+## Another Detour: Arrays
 
 
 __Despite 1st normal form specifying that only one value can exist at at an intersection of a row and column...__ &rarr;
@@ -157,6 +171,19 @@ __To retrieve the number of elements in an Array (its length), use the built in 
 
 </section>
 
+<section markdown="block">
+## Other Array Functions and Operations
+
+__The `Array` type has a rich set of [functions and operators](https://www.postgresql.org/docs/9.6/functions-array.html)__ &rarr;
+
+* {:.fragment} concatenation (like strings) with `||`: `select array[1, 2, 3] || array[4, 5];`
+* {:.fragment} contains sub array with `@>`: `select array[1, 2, 3] @> array[2, 3];`
+* {:.fragment} `array_to_string` behaves like python join: `select array_to_string(array[1.0, 2], '-');` (notice that it works with strings!)
+* {:.fragment} `unnest` turns an array into rows: `select unnest(array[1, 2, 3]);`
+* {:.fragment} and many others!
+
+</section>
+
 
 <section markdown="block">
 ## Breaking Strings Apart
@@ -192,7 +219,6 @@ select string_to_array(terms, ',') as t,
 from caers_event limit 5;
 </code></pre>
 {:.fragment}
-
 
 
 </section>
@@ -239,6 +265,15 @@ select trim('   hi   ');
 </code></pre>
 {:.fragment}
 
+</section>
+
+<section markdown="block">
+## All the Terms
+
+__Based on some of the functions and operators that we've seen, can we can get a list of the distinct terms in all rows?__ &rarr;
+
+select distinct upper(trim(unnest(string_to_array(terms, ',')))) 
+from caers_event;
 
 </section>
 
