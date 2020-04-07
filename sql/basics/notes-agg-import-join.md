@@ -33,16 +33,19 @@ from school_district
 * tasks - work with data set to determine the highest concentration of some metal in a product, per country
 	1. show our tables columns as a check
 	2. explore - show some rows
-	3. what are the possible units, no duplicates?
-	4. how many entries are there for each
+	3. what are the possible units for concentrations, but without duplicates?
+	4. how many entries are there for each unit?
 	5. what are the countries in the list, no duplicates?
-	6. how many entries does each country have?
+	6. how many product entries does each country have? <-- or what is the average concentration of metal
 		* show the same, by sorted such that most entries are at the top 
-		* with and without alias?
+		* does it work without an alias and with alias?
 		* now, only show the ones that have more than one product
 		* with alias and without!
 	7. show the concentration of the product with the highest concentration for each country, do so for concentration measurements w most frequent
 	8. same as above, but show the name of the product as well
+	9. max concentration overall
+	10. get the name associated with?
+		* difference with this and order by and limit
 
 ## constraints and naming conventions
 
