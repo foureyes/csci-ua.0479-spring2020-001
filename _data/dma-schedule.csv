@@ -874,7 +874,7 @@ Manipulating Text
  * Ch 6. Normalization
  * Ch 8. Codd's Rules for Relational Database Design
  * Ch 9. Using SQL to Implement a Relational Design"
-y,,18,02-Apr ,Thu,"Manipulating Text
+,,18,02-Apr ,Thu,"Manipulating Text
 
 * [Strings and Arrays](slides/db/strings.html)
 
@@ -942,7 +942,7 @@ Implementation
  
  * [GROUP BY](http://www.postgresqltutorial.com/postgresql-group-by/)
  * [HAVING](http://www.postgresqltutorial.com/postgresql-having/)"
-y,,19,07-Apr ,Tue,"Conditionals
+,,19,07-Apr ,Tue,"Conditionals
 
 * [Conditional Expressions](slides/db/conditionals.html)
 
