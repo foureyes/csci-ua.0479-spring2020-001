@@ -228,19 +228,74 @@ from caers_event limit 5;
 
 __We can work with Arrays in parts of our query other than the select list (for example, the where clause or in a group by)__ &rarr;
 
+Show the product, description, age and terms where the first element is nightmare (yes, we can do this with like)
+{:.fragment}
+
 <pre><code data-trim contenteditable>
-select product, description, patient_age, age_units, terms
-from caers_event where (string_to_array(terms, ','))[1] = 'NIGHTMARE';
+select product, description, 
+	patient_age, age_units, terms
+from caers_event 
+where upper((string_to_array(terms, ','))[1]) = 'NIGHTMARE';
 </code></pre>
+{:.fragment}
+
+Make groups out of the first symptom of each row, and show the oldest age from each group
 {:.fragment}
 
 <pre><code data-trim contenteditable>
 select (string_to_array(terms, ','))[1], max(patient_age)
-from caers_event group by (string_to_array(terms, ','))[1];
+from caers_event 
+group by (string_to_array(terms, ','))[1];
 </code></pre>
 {:.fragment}
 </section>
+
+<section markdown="block">
+## ANY
+
+__If we want to check for existence in any part of the list, we can use `ANY`__ &rarr;
+
+* it's kind of like `in` but for `Array`s
+* and operation can be `=`, `like`, etc.
+* syntax: `value operator ANY Array`
 {:.fragment}
+
+
+```
+select product, patient_age, age_units, terms 
+from caers_event
+where 'NIGHTMARE' ilike ANY(string_to_array(terms, ','));
+```
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Unnest
+
+__BTW, unnest is kind of _amazing_: it repeats all other columns in rows created from array__ &rarr;
+
+See the difference among these three queries:
+
+```
+select caers_event_id, product, terms 
+from caers_event where caers_event_id = 4
+```
+
+```
+select unnest(string_to_array(terms, ',')) 
+from caers_event where caers_event_id = 4
+```
+
+```
+select caers_event_id, product, 
+	unnest(string_to_array(terms, ',')) 
+from caers_event where caers_event_id = 4
+```
+
+
+
+</section>
 
 
 <section markdown="block">
@@ -278,7 +333,28 @@ from caers_event;
 </code></pre>
 {:.fragment}
 
+
 </section>
+
+<section markdown="block">
+## Using All the Terms
+
+Admittedly, the earlier query (from the slides that introduced arrays earlier) that only grouped by 1st term was contrived. __Let's find the average age per term, sorted by youngest first!__ &rarr;
+
+<pre><code data-trim contenteditable>
+select avg(patient_age), t
+ from
+     (select patient_age, age_units,
+             upper(trim(unnest(string_to_array(terms, ',')))) as t
+      from caers_event where age_units ilike '%year%') temp
+ group by t
+order by avg(patient_age);
+</code></pre>
+{:.fragment}
+
+</section>
+
+
 
 <section markdown="block">
 ## Aggregating Strings 
