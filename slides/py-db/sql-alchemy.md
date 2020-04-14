@@ -51,6 +51,16 @@ __SQLAlchemy is pretty large library and it can be a bit daunting to learn__ &ra
 	* {:.fragment} Object relational mapper
 
 </section>
+<section markdown="block">
+## Example
+
+__These slides use [the Museum of Modern Art (MoMA) collection data](https://github.com/MuseumofModernArt/collection)__ for example data.
+
+* the field names have been modified to adhere to naming conventions
+* a join table was introduced
+* [see `moma-full.sql` for creation and import](../../sql/py/moma-full.sql)
+
+</section>
 
 <section markdown="block">
 ## Raw SQL

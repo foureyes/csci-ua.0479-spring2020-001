@@ -89,6 +89,34 @@ __`pyscopg2` Methods and Workflow:__ &rarr;
 </section>
 
 <section markdown="block">
+## Example Data
+
+__These slides use [the Museum of Modern Art (MoMA) collection data](https://github.com/MuseumofModernArt/collection)__ for example data.
+
+<pre><code data-trim contenteditable>
+create table artist (
+	constituent_id integer,
+	name text,
+	bio text,
+	nationality text,
+	gender text,
+	begindate smallint,
+	enddate smallint,
+	wiki_qid text,
+	ulan text
+);
+</code></pre>
+
+<pre><code data-trim contenteditable>
+copy artist from '/tmp/Artists.csv'
+with csv header
+</code></pre>
+
+
+
+</section>
+
+<section markdown="block">
 ## pyscopg2 Connection and Cursor
 
 __Creating a connection object... and a cursor__ &rarr;
@@ -154,6 +182,9 @@ for res in cur:
 ⚠️ note that each row is a `tuple`!
 {:.fragment}
 
+⚠️ like file objects, your query result can be "exhausted" (can't loop over again)
+{:.fragment}
+
 </section>
 
 <section markdown="block">
@@ -176,6 +207,9 @@ result = cur.fetchall()
 print(result)
 </code></pre>
 {:.fragment}
+
+Calling `fetchone` with no more rows results in `None`; `fetchall` gives empty list
+{:.fragment}
 </section>
 
 <section markdown="block">
@@ -188,6 +222,9 @@ __By default, psycopg creates a transaction before executing commands...__ &rarr
 3. {:.fragment} to persist changes, call `commit` on the `connection` object
 
 __⚠️ Make sure to commit after INSERT, UPDATE, and DELETE!__
+{:.fragment}
+
+(using [web_user](../db/indexes.html#10))
 {:.fragment}
 
 <pre><code data-trim contenteditable>
@@ -217,6 +254,32 @@ __Lastly, you can close the connection to the database by calling `close` on the
 * {:.fragment} `conn.close()`
 * {:.fragment} `cur.close()` is available as well to close a cursor, but not connection 
 * {:.fragment} note that once closed, a `cursor` or `connection` can no longer be used
+</section>
+
+<section markdown="block">
+## Also, With!
+
+__Both connections and cursors can be used with `with`__:
+
+* {:.fragment} for connection, exiting the with block autocommits
+* {:.fragment} for cursor, exiting the with block closes cursor
+* {:.fragment} an example of both:
+
+<pre><code data-trim contenteditable>
+conn = psycopg2.connect(DSN)
+
+with conn:
+    with conn.cursor() as curs:
+        curs.execute(SQL1)
+
+with conn:
+    with conn.cursor() as curs:
+        curs.execute(SQL2)
+
+conn.close()
+</code></pre>
+{:.fragment}
+
 </section>
 
 <section markdown="block">
@@ -397,7 +460,9 @@ Check out the [psycopg2 module usage section from the official docs](http://init
 	* with
 	* commit
 	* rollback
-* server side cursors
+* server side cursors (to avoid client having to deal with large amounts of data)
+* handling multiple threads and one connection
 * etc.
+{:.fragment}
 
 </section>
