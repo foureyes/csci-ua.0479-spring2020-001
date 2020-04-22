@@ -1228,15 +1228,23 @@ HW 09:
 ,,23,21-Apr ,Tue,NoSQL (mongodb) Continued,Same as Previous,"__Quiz #07 and #08__ – due Thursday morning, 4/24, at 9:30am",,NoSQL (mongodb) Continued,"Practical SQL
  
  Ch 14: Analyzing Spatial Data with PostGIS"
-y,,24,23-Apr ,Thu,"SQLAlchemy and MongoDB Lab
+,,24,23-Apr ,Thu,"* Review MongoDB Queries
+* [MongoDB Database Design](slides/mongo/design.html)
+* [Aggregation](slides/mongo/aggregation.html)
 
+<!--
+* Discuss Mini Project
+SQLAlchemy and MongoDB Lab
+–>
 <!--
 TODO: Geo-spatial Data (GIS with pandas, postgres, mongodb)
 -->","<!--
 Practical SQL
  
  Ch 14: Analyzing Spatial Data with PostGIS
--->","__Lab #01 / Homework #07__  due in class 11/26
+-->","<!--
+
+__Lab #01 / Homework #07__  due in class 11/26
 
 * [Lab #01 / Homework #07 Instructions](assignments/lab-01-mongo.html)
 
@@ -1244,12 +1252,8 @@ Practical SQL
 __Mini Project due Monday Dec 9th at 11pm__
 
 * [Instructions for Free-form Homework Assignment](assignments/mini-project.html)
-",,"Geo-spatial Data (GIS with pandas, postgres, mongodb)",https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data)
-y,,25,28-Apr ,Tue,"* Discuss Mini Project
-* Review MongoDB Queries
-* [MongoDB Database Design](slides/mongo/design.html)
-* [Aggregation](slides/mongo/aggregation.html)
-* Evaluation
+-->",,"Geo-spatial Data (GIS with pandas, postgres, mongodb)",https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data)
+y,,25,28-Apr ,Tue,"Web Based Visualization and / or Cloud Databases
 
 <!-- 
 Cloud Storage 
