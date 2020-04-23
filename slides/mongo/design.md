@@ -32,10 +32,9 @@ Keeping these design goals in mind, let's see how we can achieve this with a doc
 In relational databases, __referential integrity__ between two tables is maintained via __foreign key constraints__. __In Mongo DB, however...__  &rarr;
 
 * {:.fragment} we'll likely still _want_ documents to be related to each other in some way, but we don't have foreign keys 😲!
-* {:.fragment} instead, in MongoDB, relationships between documents can set up by: &rarr;
+* {:.fragment} instead, in MongoDB, relationships between documents can be set up by: &rarr;
 	1. embedding (that is, one document contains one or more other documents)
 	2. linking (...one document references another document by id)
-    	* {:.fragment} seems familiar, eh?
 
 </section>
 
