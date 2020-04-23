@@ -45,7 +45,20 @@ db.collectionName.aggregate(...)
 </code></pre>
 {:.fragment}
 
-Pass in an Array containing a sequence of aggregate operations.
+Pass in an Array containing a sequence of aggregation pipeline stages.
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Aggregation Pipeline Stages Overview
+
+__We'll use two stages__ &rarr;
+
+1. {:.fragment} `$match` - to filter documents
+2. {:.fragment} `$group` - to group documents
+
+There are more stages, such as `$project` to reshape (add, remove, calculate) fields. You can find a [full listing in the docs](https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/).
 {:.fragment}
 
 </section>
