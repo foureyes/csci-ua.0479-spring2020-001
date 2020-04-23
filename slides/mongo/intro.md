@@ -297,12 +297,14 @@ WriteResult({ "nInserted" : 1 })
 </section>
 
 <section markdown="block">
-## Find and Update
+## Find and Update Details
 
 * [`find(query, projections)`](https://docs.mongodb.com/manual/reference/method/db.collection.find/#db.collection.find) and `findOne`
 	* query documents (default and)
-		* `null`, `ObjectId`, `ISODate`
+		* `null` or `{}`, `ObjectId("id")`, `ISODate`
 	* projection documents (1 vs 0)
+	* substr by using regex: `{prop: /substr/i}`
+	* query by subdoc
 	* `count`, `limit`, `sort` (-1 vs 1)
 	* `k: {$op: v}` operators: `$lt`, `$lte`, `$in`, `$nin`, etc.
 	* (default) and vs `$and` and `$or`
@@ -315,7 +317,186 @@ WriteResult({ "nInserted" : 1 })
 
 </section>
 
+<section markdown="block">
+## Insert a Bunch of Snakes
 
+
+🐍 sneks:
+
+
+```
+db.snakes.insert({name: 'reese slitherspoon', length:3})
+db.snakes.insert({name: 'hissy elliot', length:2})
+db.snakes.insert({name: 'william snakespeare', length:2})
+db.snakes.insert({name: 'hisstopher walken', length:3})
+db.snakes.insert({name: 'billy i\'ll-hiss', length:4})
+db.snakes.insert({name: 'monty python'})
+```
+{:.fragment}
+
+</section>
+
+
+<section markdown="block">
+## Find, Limit, Count
+
+🔍 ✋ ✌️
+
+
+```
+db.snakes.find()     // all snakes
+db.snakes.find({})   // all snakes
+db.snakes.find(null) // all snakes
+db.snakes.find({name: null})   // name property is null or missing
+db.snakes.find({_id: ObjectID("123abc")})  // snake w/ id 123abc
+db.snakes.find(ObjectID("123abc"})         // snake w/ id 123abc
+db.snakes.find().limit(2)   // 2 snakes (order implementation specific)
+db.snakes.find({length: 3}).count()
+```
+{:.fragment}
+</section>
+
+<section markdown="block">
+## Sorting, Projection
+
+
+📁 🎥
+
+```
+db.snakes.find().sort({length: 1})            // sort ascending
+db.snakes.find().sort({length: -1})           // sort descending
+db.snakes.find().sort({length: -1, name: 1})  // sort w/ 2 criteria
+db.snakes.find(null, {_id: 0})                // supress id
+db.snakes.find(null, {_id: 0, name: 1})       // only include name
+
+// projection and sort
+db.snakes.find(null, {_id: 0}).sort({length: -1, name: 1})
+```
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Subdocument, Substring Query
+
+Query for substring using regex:
+{:.fragment}
+
+```
+db.snakes.find({name: /hiss/i}) // name has hiss, ignore case
+```
+{:.fragment}
+
+Query object can include subdoc criteria:
+{:.fragment}
+
+```
+db.books.insert({title: 'Dune', author: {first: 'Frank', last: 'Herbert'}})
+db.books.insert({title: 'Frankenstein', author: {first: 'Mary', last: 'Shelley'}})
+db.books.find({'author.first':'Mary'})
+```
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Operators
+
+Example of greater than `$gt` and `$or`:
+
+```
+db.snakes.find({length: {$gt: 2}})
+db.snakes.find({$or: [{name: /hiss/i}, {length: {$lt: 3}}]})
+```
+{:.fragment}
+</section>
+
+
+<section markdown="block">
+## Updating
+
+Replace document with `update`
+
+```
+db.snakes.update({name: 'hissy elliot'}, {length: 100})
+db.snakes.find({name: 'hissy elliot'})  // uh-oh, whole doc replaced!
+db.snakes.find()
+```
+{:.fragment}
+
+Update property with `update` and `set`
+{:.fragment}
+
+```
+db.snakes.update({length: 100}, {length: 2, name: 'hissy elliot'})
+db.snakes.update({name: 'hissy elliot'}, {$set: {length: 100}})
+db.snakes.find({name: 'hissy elliot'})
+```
+{:.fragment}
+
+
+```
+db.collection.update(query, updateDoc, {multi: true}) // update all!
+// ⚠️  otherwise, only 1
+
+```
+{:.fragment}
+
+</section>
+
+<section markdown="block">
+## Arrays
+
+
+```
+db.students.insert({name: 'alice', hw:[91, 92, 93]})
+db.students.insert({name: 'bob', hw:[87, 83, 85]})
+db.students.insert({name: 'carol', hw:[81, 82, 83]})
+```
+```
+db.students.find({hw: 83}) // array has 83
+```
+{:.fragment}
+
+```
+db.students.find({hw: {$gt: 83}}) // has element > 83
+```
+{:.fragment}
+
+```
+// add 94 to hw array for alice
+db.students.update({name: 'alice'}, {$push: {hw: 94}})
+```
+{:.fragment}
+
+
+</section>
+
+<section markdown="block">
+## cursor, forEach, next
+
+__Using find gives back a `cursor`... if assigned to a variable (`var`, `const`, `let`), you can call cursor methods: `next`, `forEach`, and `map`__ &rarr;
+
+```
+var result = db.snakes.find()
+result.next()
+```
+{:.fragment}
+
+```
+var result = db.snakes.find()
+result.forEach(snek => print(`${snek.name} is a snake`))
+```
+{:.fragment}
+
+```
+var result = db.snakes.find()
+result.map(snek => snek.name.toUpperCase())
+```
+{:.fragment}
+
+
+</section>
 
 <section markdown="block">
 ## Importing Data
