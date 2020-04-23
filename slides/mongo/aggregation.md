@@ -74,7 +74,7 @@ __The `$group` operator creates distinct groups as separate documents__ &rarr;
 * {:.fragment} similar to `GROUP BY` in sql
 * {:.fragment} value includes the following keys:
 	* `_id`: the field to group by
-	* the name of this field is prefixed with a dollar sign and quoted as a string
+	* ⚠️ the name of this field is __prefixed with a dollar__ sign and __quoted as a string__: `"$neighbourhood"`
 	* this syntax references the _value_ in a field from the original document
 	* any number of additional fields in the document
 	* with each field potentially having an accumulator operation:`$sum`, `$avg`, `$max`, `$last`, `$push` 
@@ -123,6 +123,8 @@ __Using "scraped" `listings` data from [insideairbnb.com](http://insideairbnb.co
 
 * {:.fragment} download the latest `listings` for New York City
 * {:.fragment} `mongoimport --headerline --type=csv --db=test --collection=reviews --file=./listings.csv`
+* {:.fragment} note `--headerline`  (don't need a separate headers file)
+* {:.fragment} also, database and collection are `test` and `reviews` 
 
 </section>
 
@@ -133,7 +135,7 @@ __Using "scraped" `listings` data from [insideairbnb.com](http://insideairbnb.co
 __Count the number of listings per neighborhood, not in the city of Brookyln. Exclude counts less than 10.__
 
 <pre><code data-trim contenteditable>
-db.listings.aggregate([ 
+db.reviews.aggregate([ 
 	{$match: {city: "Brooklyn"}}, 
 	{$group: {_id: "$neighbourhood", listingCount: {$sum: 1}}}, 
 	{$match: {listingCount: {$lt: 10}}}
