@@ -14,9 +14,8 @@ title: "MongoDB Aggregation"
 <section markdown="block">
 ## Example Data
 
-__Using job postings from [the City of New York’s official jobs site](http://www.nyc.gov/html/careers/html/search/search.shtml), let's practice some aggregations__  &rarr;
+__Using the [job postings data set](https://data.cityofnewyork.us/City-Government/NYC-Jobs/kpav-sd4t) (sourced from the City of New York’s [official jobs site](http://www.nyc.gov/html/careers/html/search/search.shtml)), let's practice some aggregations__  &rarr;
 
-* {:.fragment} [Job Listings from nyc.gov](https://data.cityofnewyork.us/City-Government/NYC-Jobs/kpav-sd4t)
 * {:.fragment} bring the `csv` file into a collection named `jobs` in a database called `test` by using `mongoimport`;
 * {:.fragment} you'll have to specify that it has a header line, that it's type is a csv, and where the import file is located
 * {:.fragment} `mongoimport --headerline --type=csv --db=test --collection=jobs --file=./NYC_jobs.csv`
