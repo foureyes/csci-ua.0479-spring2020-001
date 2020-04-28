@@ -1,6 +1,6 @@
 ---
 layout: slides
-title: "Python and MongoDB"
+title: "Dash"
 ---
 
 <section markdown="block" class="intro-slide">
@@ -12,8 +12,16 @@ title: "Python and MongoDB"
 </section>
 
 <section markdown="block">
+## Installation
+
+`pip3 install dash`
+
+</section>
+<section markdown="block">
 ## 
 
 [](https://data.cityofnewyork.us/City-Government/NYC-Jobs/kpav-sd4t)
 
 </section>
+
+
