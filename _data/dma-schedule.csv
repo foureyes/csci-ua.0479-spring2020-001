@@ -1253,11 +1253,18 @@ __Mini Project due Monday Dec 9th at 11pm__
 
 * [Instructions for Free-form Homework Assignment](assignments/mini-project.html)
 -->",,"Geo-spatial Data (GIS with pandas, postgres, mongodb)",https://firebase.google.com/docs/firestore/ (Introduction to Secure and Validate Data)
-,,25,28-Apr ,Tue,"Web Based Visualization and / or Cloud Databases
+,,25,28-Apr ,Tue,"Aggregations, Python and MongoDB
+
+* see aggregation slides
+* [Python and MongoDB with PyMongo](slides/mongo/pymongo.html)
+
+
+<!--
+Web Based Visualization and / or Cloud Databases
 
 * [Python and MongoDB with PyMongo](slides/mongo/pymongo.html)
 * [Web Based Visualization with Dash](slides/cloud/dash.html)
-
+-->
 
 <!-- 
 * [Deployment with MongoDB Atlas and Glitch](slides/cloud/deploy.html) Cloud Storage 
