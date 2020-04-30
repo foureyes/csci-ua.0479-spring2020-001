@@ -56,7 +56,7 @@ function onClick(evt) {
 }
 </script>
 
-# Homework #08 / "In-Class" Group Project - SQLAlchemy, MongoDB, PyMongo - Due 4/30 at 11pm
+# Homework #08 / _In-Class_ Group Project - SQLAlchemy, MongoDB, PyMongo - Due 5/1 at 11pm
 
 __Overview__
 
@@ -231,7 +231,7 @@ if __name__ == '__main__':
 
 Turn in the homework at the end of class (or by 11pm edt) using the form below:
 
-* ⚠️eyou must be logged in to your NYU google account to see the form
+* ⚠️you must be logged in to your NYU google account to see the form
 * ⚠️every group member must submit their own form!
 
 [https://forms.gle/Wc42RkcicZCZ65QK7](https://forms.gle/Wc42RkcicZCZ65QK7)
