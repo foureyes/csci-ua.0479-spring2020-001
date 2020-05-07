@@ -21,7 +21,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: donation; Type: TABLE; Schema: public; Owner: joe
 --
 
 CREATE TABLE public.donation (
@@ -35,10 +34,8 @@ CREATE TABLE public.donation (
 );
 
 
-ALTER TABLE public.donation OWNER TO joe;
 
 --
--- Name: donation_staging; Type: TABLE; Schema: public; Owner: joe
 --
 
 CREATE TABLE public.donation_staging (
@@ -57,10 +54,8 @@ CREATE TABLE public.donation_staging (
 );
 
 
-ALTER TABLE public.donation_staging OWNER TO joe;
 
 --
--- Name: donor; Type: TABLE; Schema: public; Owner: joe
 --
 
 CREATE TABLE public.donor (
@@ -69,10 +64,8 @@ CREATE TABLE public.donor (
 );
 
 
-ALTER TABLE public.donor OWNER TO joe;
 
 --
--- Name: donor_donor_id_seq; Type: SEQUENCE; Schema: public; Owner: joe
 --
 
 CREATE SEQUENCE public.donor_donor_id_seq
@@ -84,17 +77,14 @@ CREATE SEQUENCE public.donor_donor_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.donor_donor_id_seq OWNER TO joe;
 
 --
--- Name: donor_donor_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joe
 --
 
 ALTER SEQUENCE public.donor_donor_id_seq OWNED BY public.donor.donor_id;
 
 
 --
--- Name: donor_location; Type: TABLE; Schema: public; Owner: joe
 --
 
 CREATE TABLE public.donor_location (
@@ -103,10 +93,8 @@ CREATE TABLE public.donor_location (
 );
 
 
-ALTER TABLE public.donor_location OWNER TO joe;
 
 --
--- Name: elected_official; Type: TABLE; Schema: public; Owner: joe
 --
 
 CREATE TABLE public.elected_official (
@@ -116,10 +104,8 @@ CREATE TABLE public.elected_official (
 );
 
 
-ALTER TABLE public.elected_official OWNER TO joe;
 
 --
--- Name: elected_official_elected_official_id_seq; Type: SEQUENCE; Schema: public; Owner: joe
 --
 
 CREATE SEQUENCE public.elected_official_elected_official_id_seq
@@ -131,17 +117,14 @@ CREATE SEQUENCE public.elected_official_elected_official_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.elected_official_elected_official_id_seq OWNER TO joe;
 
 --
--- Name: elected_official_elected_official_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joe
 --
 
 ALTER SEQUENCE public.elected_official_elected_official_id_seq OWNED BY public.elected_official.elected_official_id;
 
 
 --
--- Name: location; Type: TABLE; Schema: public; Owner: joe
 --
 
 CREATE TABLE public.location (
@@ -151,10 +134,8 @@ CREATE TABLE public.location (
 );
 
 
-ALTER TABLE public.location OWNER TO joe;
 
 --
--- Name: location_location_id_seq; Type: SEQUENCE; Schema: public; Owner: joe
 --
 
 CREATE SEQUENCE public.location_location_id_seq
@@ -166,17 +147,14 @@ CREATE SEQUENCE public.location_location_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.location_location_id_seq OWNER TO joe;
 
 --
--- Name: location_location_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joe
 --
 
 ALTER SEQUENCE public.location_location_id_seq OWNED BY public.location.location_id;
 
 
 --
--- Name: organization; Type: TABLE; Schema: public; Owner: joe
 --
 
 CREATE TABLE public.organization (
@@ -186,10 +164,8 @@ CREATE TABLE public.organization (
 );
 
 
-ALTER TABLE public.organization OWNER TO joe;
 
 --
--- Name: organization_organization_id_seq; Type: SEQUENCE; Schema: public; Owner: joe
 --
 
 CREATE SEQUENCE public.organization_organization_id_seq
@@ -201,45 +177,38 @@ CREATE SEQUENCE public.organization_organization_id_seq
     CACHE 1;
 
 
-ALTER TABLE public.organization_organization_id_seq OWNER TO joe;
 
 --
--- Name: organization_organization_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: joe
 --
 
 ALTER SEQUENCE public.organization_organization_id_seq OWNED BY public.organization.organization_id;
 
 
 --
--- Name: donor donor_id; Type: DEFAULT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.donor ALTER COLUMN donor_id SET DEFAULT nextval('public.donor_donor_id_seq'::regclass);
 
 
 --
--- Name: elected_official elected_official_id; Type: DEFAULT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.elected_official ALTER COLUMN elected_official_id SET DEFAULT nextval('public.elected_official_elected_official_id_seq'::regclass);
 
 
 --
--- Name: location location_id; Type: DEFAULT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.location ALTER COLUMN location_id SET DEFAULT nextval('public.location_location_id_seq'::regclass);
 
 
 --
--- Name: organization organization_id; Type: DEFAULT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.organization ALTER COLUMN organization_id SET DEFAULT nextval('public.organization_organization_id_seq'::regclass);
 
 
 --
--- Data for Name: donation; Type: TABLE DATA; Schema: public; Owner: joe
 --
 
 COPY public.donation (donation_id, date, amount, value_in_kind, description, donor_id, organization_id) FROM stdin;
@@ -1759,7 +1728,6 @@ DON-00048	2018-04-26 00:00:00-04	1500	\N	\N	88	\N
 
 
 --
--- Data for Name: donation_staging; Type: TABLE DATA; Schema: public; Owner: joe
 --
 
 COPY public.donation_staging (donation_id, donor_name, donor_city, donor_state, donation_date, amount, value_in_kind, description, organization_name, elected_official, elected_official_name, elected_official_title) FROM stdin;
@@ -3279,7 +3247,6 @@ DON-01732	JPB Foundation	New York	New York	2018-10-10 00:00:00-04	20000	\N	\N	Fo
 
 
 --
--- Data for Name: donor; Type: TABLE DATA; Schema: public; Owner: joe
 --
 
 COPY public.donor (donor_id, name) FROM stdin;
@@ -4281,7 +4248,6 @@ COPY public.donor (donor_id, name) FROM stdin;
 
 
 --
--- Data for Name: donor_location; Type: TABLE DATA; Schema: public; Owner: joe
 --
 
 COPY public.donor_location (donor_id, location_id) FROM stdin;
@@ -5176,7 +5142,6 @@ COPY public.donor_location (donor_id, location_id) FROM stdin;
 
 
 --
--- Data for Name: elected_official; Type: TABLE DATA; Schema: public; Owner: joe
 --
 
 COPY public.elected_official (elected_official_id, name, title) FROM stdin;
@@ -5193,7 +5158,6 @@ COPY public.elected_official (elected_official_id, name, title) FROM stdin;
 
 
 --
--- Data for Name: location; Type: TABLE DATA; Schema: public; Owner: joe
 --
 
 COPY public.location (location_id, city, state) FROM stdin;
@@ -5389,7 +5353,6 @@ COPY public.location (location_id, city, state) FROM stdin;
 
 
 --
--- Data for Name: organization; Type: TABLE DATA; Schema: public; Owner: joe
 --
 
 COPY public.organization (organization_id, name, elected_official_id) FROM stdin;
@@ -5415,35 +5378,30 @@ COPY public.organization (organization_id, name, elected_official_id) FROM stdin
 
 
 --
--- Name: donor_donor_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joe
 --
 
 SELECT pg_catalog.setval('public.donor_donor_id_seq', 994, true);
 
 
 --
--- Name: elected_official_elected_official_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joe
 --
 
 SELECT pg_catalog.setval('public.elected_official_elected_official_id_seq', 9, true);
 
 
 --
--- Name: location_location_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joe
 --
 
 SELECT pg_catalog.setval('public.location_location_id_seq', 188, true);
 
 
 --
--- Name: organization_organization_id_seq; Type: SEQUENCE SET; Schema: public; Owner: joe
 --
 
 SELECT pg_catalog.setval('public.organization_organization_id_seq', 18, true);
 
 
 --
--- Name: donor donor_pkey; Type: CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.donor
@@ -5451,7 +5409,6 @@ ALTER TABLE ONLY public.donor
 
 
 --
--- Name: elected_official elected_official_pkey; Type: CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.elected_official
@@ -5459,7 +5416,6 @@ ALTER TABLE ONLY public.elected_official
 
 
 --
--- Name: location location_pkey; Type: CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.location
@@ -5467,7 +5423,6 @@ ALTER TABLE ONLY public.location
 
 
 --
--- Name: organization organization_pkey; Type: CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.organization
@@ -5475,7 +5430,6 @@ ALTER TABLE ONLY public.organization
 
 
 --
--- Name: donation donation_donor_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.donation
@@ -5483,7 +5437,6 @@ ALTER TABLE ONLY public.donation
 
 
 --
--- Name: donation donation_organization_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.donation
@@ -5491,7 +5444,6 @@ ALTER TABLE ONLY public.donation
 
 
 --
--- Name: donor_location donor_location_donor_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.donor_location
@@ -5499,7 +5451,6 @@ ALTER TABLE ONLY public.donor_location
 
 
 --
--- Name: donor_location donor_location_location_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.donor_location
@@ -5507,7 +5458,6 @@ ALTER TABLE ONLY public.donor_location
 
 
 --
--- Name: organization organization_elected_official_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: joe
 --
 
 ALTER TABLE ONLY public.organization
